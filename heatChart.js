@@ -54,7 +54,7 @@
 
 			var radial_position = Math.abs(Math.floor(value / this.max * this.options.theta) - this.options.theta);
 			radial_position = Math.abs(360 - (radial_position - this.options.offset));
-			$(element).css( this.options.applyTo, 'hsl(' + radial_position + ', ' + this.options.saturation + '%, ' + this.options.saturation + '%)');
+			$(element).css( this.options.applyTo, 'hsl(' + radial_position + ', ' + this.options.saturation + '%, ' + this.options.lightness + '%)');
 		}
 	};
 
