@@ -6,7 +6,7 @@
 			applyTo: "background",
 			theta: 220,
 			offset: 0,
-			saturation: 60,
+			saturation: 70,
 			lightness: 50,
 			alpha: 1,
 			reverse: false,
