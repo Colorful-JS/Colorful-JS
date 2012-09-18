@@ -8,11 +8,13 @@
 			offset: 0,
 			saturation: 60,
 			lightness: 50,
-			reverse: false
+			alpha: 1,
+			reverse: false,
+			blackAndWhite: false
 		};
 	var methods = {
 		get_number_from_html : function( jq_obj ) {
-			return parseInt($(jq_obj).html());
+			return parseFloat($(jq_obj).html());
 		}
 	}
 
@@ -52,9 +54,15 @@
 				value = 1 - value;
 			}
 
-			var radial_position = Math.abs(Math.floor(value / this.max * this.options.theta) - this.options.theta);
-			radial_position = Math.abs(360 - (radial_position - (this.options.offset + this.options.theta )));
-			$(element).css( this.options.applyTo, 'hsl(' + radial_position + ', ' + this.options.saturation + '%, ' + this.options.lightness + '%)');
+			if(this.options.blackAndWhite){
+				var hue = Math.floor(( value / this.max ) * 255 );
+				console.log(hue);
+				$(element).css( this.options.applyTo, 'rgb(' + hue + ', ' + hue + ', ' + hue + ')');
+			} else {
+				var hue = Math.abs(Math.floor(value / this.max * this.options.theta) - this.options.theta);
+				hue = Math.abs(360 - (hue - (this.options.offset + this.options.theta )));
+				$(element).css( this.options.applyTo, 'hsla(' + hue + ', ' + this.options.saturation + '%, ' + this.options.lightness + '%, ' + this.options.alpha + ')');
+			}
 		}
 	};
 

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HeatChart: Demonstrations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <!-- <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png"> -->
+    
+
+    <style type="text/css">
+    	table, #div {
+    		width:100%;
+    	}
+    	table tr td {
+    		width:40px;
+    		height:40px;
+
+    		text-align:center;
+    		color:white;
+    		font-family:sans-serif;
+    		font-size:12px;
+    	}
+    	#table2 {
+    		font-size:15px;
+    		font-weight:bold;
+    	}
+    	.demo-div div{
+    		width:10%;
+    		height:25px;
+    		text-indent:-10000px;
+    		float:left;
+    	}
+    </style>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">HeatChart</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Demos</a></li>
+              <!-- <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li> -->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    	<h1>HeatChart.js</h1>
+    	<p>a numerical-value-to-color linear interpolation jQuery plugin</p>
+      <div class="row">
+      	<div class="span12">
+      		<pre>$('#table1').heatChart({theta: 220});</pre>
+      		<table id="table1">
+      			<tr>
+      				<td>0</td>
+      				<td>1</td>
+      				<td>2</td>
+      				<td>3</td>
+      				<td>4</td>
+      				<td>5</td>
+      				<td>6</td>
+      				<td>7</td>
+      				<td>8</td>
+      				<td>9</td>
+      			</tr>
+      			<tr>
+      				<td>10</td>
+      				<td>11</td>
+      				<td>12</td>
+      				<td>13</td>
+      				<td>14</td>
+      				<td>15</td>
+      				<td>16</td>
+      				<td>17</td>
+      				<td>18</td>
+      				<td>19</td>
+      			</tr>
+      			<tr>
+      				<td>20</td>
+      				<td>21</td>
+      				<td>22</td>
+      				<td>23</td>
+      				<td>24</td>
+      				<td>25</td>
+      				<td>26</td>
+      				<td>27</td>
+      				<td>28</td>
+      				<td>29</td>
+      			</tr>
+      			<tr>
+      				<td>30</td>
+      				<td>31</td>
+      				<td>32</td>
+      				<td>33</td>
+      				<td>34</td>
+      				<td>35</td>
+      				<td>36</td>
+      				<td>37</td>
+      				<td>38</td>
+      				<td>39</td>
+      			</tr>
+      			<tr>
+      				<td>40</td>
+      				<td>41</td>
+      				<td>42</td>
+      				<td>43</td>
+      				<td>44</td>
+      				<td>45</td>
+      				<td>46</td>
+      				<td>47</td>
+      				<td>48</td>
+      				<td>49</td>
+      			</tr>
+      			<tr>
+      				<td>50</td>
+      				<td>51</td>
+      				<td>52</td>
+      				<td>53</td>
+      				<td>54</td>
+      				<td>55</td>
+      				<td>56</td>
+      				<td>57</td>
+      				<td>58</td>
+      				<td>59</td>
+      			</tr>
+      		</table>
+      		<hr/>
+      	</div>
+      	<div class="span12">
+      	      		<pre>$('#table2').heatChart({theta: 220, applyTo: 'color'});</pre>
+      	      		<table id="table2">
+      	      			<tr>
+      	      				<td>0</td>
+      	      				<td>1</td>
+      	      				<td>2</td>
+      	      				<td>3</td>
+      	      				<td>4</td>
+      	      				<td>5</td>
+      	      				<td>6</td>
+      	      				<td>7</td>
+      	      				<td>8</td>
+      	      				<td>9</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>10</td>
+      	      				<td>11</td>
+      	      				<td>12</td>
+      	      				<td>13</td>
+      	      				<td>14</td>
+      	      				<td>15</td>
+      	      				<td>16</td>
+      	      				<td>17</td>
+      	      				<td>18</td>
+      	      				<td>19</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>20</td>
+      	      				<td>21</td>
+      	      				<td>22</td>
+      	      				<td>23</td>
+      	      				<td>24</td>
+      	      				<td>25</td>
+      	      				<td>26</td>
+      	      				<td>27</td>
+      	      				<td>28</td>
+      	      				<td>29</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>30</td>
+      	      				<td>31</td>
+      	      				<td>32</td>
+      	      				<td>33</td>
+      	      				<td>34</td>
+      	      				<td>35</td>
+      	      				<td>36</td>
+      	      				<td>37</td>
+      	      				<td>38</td>
+      	      				<td>39</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>40</td>
+      	      				<td>41</td>
+      	      				<td>42</td>
+      	      				<td>43</td>
+      	      				<td>44</td>
+      	      				<td>45</td>
+      	      				<td>46</td>
+      	      				<td>47</td>
+      	      				<td>48</td>
+      	      				<td>49</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>50</td>
+      	      				<td>51</td>
+      	      				<td>52</td>
+      	      				<td>53</td>
+      	      				<td>54</td>
+      	      				<td>55</td>
+      	      				<td>56</td>
+      	      				<td>57</td>
+      	      				<td>58</td>
+      	      				<td>59</td>
+      	      			</tr>
+      	      		</table>
+      	      		<hr/>
+      	      	</div>
+      	      	<div class="span12">
+      	      		<pre>$('#table3').heatChart({theta: 180});</pre>
+      	      		<table id="table3">
+      	      			<tr>
+      	      				<td>0</td>
+      	      				<td>1</td>
+      	      				<td>2</td>
+      	      				<td>3</td>
+      	      				<td>4</td>
+      	      				<td>5</td>
+      	      				<td>6</td>
+      	      				<td>7</td>
+      	      				<td>8</td>
+      	      				<td>9</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>10</td>
+      	      				<td>11</td>
+      	      				<td>12</td>
+      	      				<td>13</td>
+      	      				<td>14</td>
+      	      				<td>15</td>
+      	      				<td>16</td>
+      	      				<td>17</td>
+      	      				<td>18</td>
+      	      				<td>19</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>20</td>
+      	      				<td>21</td>
+      	      				<td>22</td>
+      	      				<td>23</td>
+      	      				<td>24</td>
+      	      				<td>25</td>
+      	      				<td>26</td>
+      	      				<td>27</td>
+      	      				<td>28</td>
+      	      				<td>29</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>30</td>
+      	      				<td>31</td>
+      	      				<td>32</td>
+      	      				<td>33</td>
+      	      				<td>34</td>
+      	      				<td>35</td>
+      	      				<td>36</td>
+      	      				<td>37</td>
+      	      				<td>38</td>
+      	      				<td>39</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>40</td>
+      	      				<td>41</td>
+      	      				<td>42</td>
+      	      				<td>43</td>
+      	      				<td>44</td>
+      	      				<td>45</td>
+      	      				<td>46</td>
+      	      				<td>47</td>
+      	      				<td>48</td>
+      	      				<td>49</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>50</td>
+      	      				<td>51</td>
+      	      				<td>52</td>
+      	      				<td>53</td>
+      	      				<td>54</td>
+      	      				<td>55</td>
+      	      				<td>56</td>
+      	      				<td>57</td>
+      	      				<td>58</td>
+      	      				<td>59</td>
+      	      			</tr>
+      	      		</table>
+      	      		<hr/>
+      	      	</div>
+      	      	<div class="span12">
+      	      		<pre>$('#table4').heatChart({theta: 180, offset: 180});</pre>
+      	      		<table id="table4">
+      	      			<tr>
+      	      				<td>0</td>
+      	      				<td>1</td>
+      	      				<td>2</td>
+      	      				<td>3</td>
+      	      				<td>4</td>
+      	      				<td>5</td>
+      	      				<td>6</td>
+      	      				<td>7</td>
+      	      				<td>8</td>
+      	      				<td>9</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>10</td>
+      	      				<td>11</td>
+      	      				<td>12</td>
+      	      				<td>13</td>
+      	      				<td>14</td>
+      	      				<td>15</td>
+      	      				<td>16</td>
+      	      				<td>17</td>
+      	      				<td>18</td>
+      	      				<td>19</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>20</td>
+      	      				<td>21</td>
+      	      				<td>22</td>
+      	      				<td>23</td>
+      	      				<td>24</td>
+      	      				<td>25</td>
+      	      				<td>26</td>
+      	      				<td>27</td>
+      	      				<td>28</td>
+      	      				<td>29</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>30</td>
+      	      				<td>31</td>
+      	      				<td>32</td>
+      	      				<td>33</td>
+      	      				<td>34</td>
+      	      				<td>35</td>
+      	      				<td>36</td>
+      	      				<td>37</td>
+      	      				<td>38</td>
+      	      				<td>39</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>40</td>
+      	      				<td>41</td>
+      	      				<td>42</td>
+      	      				<td>43</td>
+      	      				<td>44</td>
+      	      				<td>45</td>
+      	      				<td>46</td>
+      	      				<td>47</td>
+      	      				<td>48</td>
+      	      				<td>49</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>50</td>
+      	      				<td>51</td>
+      	      				<td>52</td>
+      	      				<td>53</td>
+      	      				<td>54</td>
+      	      				<td>55</td>
+      	      				<td>56</td>
+      	      				<td>57</td>
+      	      				<td>58</td>
+      	      				<td>59</td>
+      	      			</tr>
+      	      		</table>
+      	      		<hr/>
+      	      	</div>
+      	      	<div class="span12">
+      	      		<pre>$('#table5').heatChart({theta: 180, offset: 180, reverse: true});</pre>
+      	      		<table id="table5">
+      	      			<tr>
+      	      				<td>0</td>
+      	      				<td>1</td>
+      	      				<td>2</td>
+      	      				<td>3</td>
+      	      				<td>4</td>
+      	      				<td>5</td>
+      	      				<td>6</td>
+      	      				<td>7</td>
+      	      				<td>8</td>
+      	      				<td>9</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>10</td>
+      	      				<td>11</td>
+      	      				<td>12</td>
+      	      				<td>13</td>
+      	      				<td>14</td>
+      	      				<td>15</td>
+      	      				<td>16</td>
+      	      				<td>17</td>
+      	      				<td>18</td>
+      	      				<td>19</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>20</td>
+      	      				<td>21</td>
+      	      				<td>22</td>
+      	      				<td>23</td>
+      	      				<td>24</td>
+      	      				<td>25</td>
+      	      				<td>26</td>
+      	      				<td>27</td>
+      	      				<td>28</td>
+      	      				<td>29</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>30</td>
+      	      				<td>31</td>
+      	      				<td>32</td>
+      	      				<td>33</td>
+      	      				<td>34</td>
+      	      				<td>35</td>
+      	      				<td>36</td>
+      	      				<td>37</td>
+      	      				<td>38</td>
+      	      				<td>39</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>40</td>
+      	      				<td>41</td>
+      	      				<td>42</td>
+      	      				<td>43</td>
+      	      				<td>44</td>
+      	      				<td>45</td>
+      	      				<td>46</td>
+      	      				<td>47</td>
+      	      				<td>48</td>
+      	      				<td>49</td>
+      	      			</tr>
+      	      			<tr>
+      	      				<td>50</td>
+      	      				<td>51</td>
+      	      				<td>52</td>
+      	      				<td>53</td>
+      	      				<td>54</td>
+      	      				<td>55</td>
+      	      				<td>56</td>
+      	      				<td>57</td>
+      	      				<td>58</td>
+      	      				<td>59</td>
+      	      			</tr>
+      	      		</table>
+      	      		<hr/>
+      	      	</div>
+      	      	<div class="span12">
+      	      		<pre>$('#div1').heatChart({theta: 360, dataTag: 'div'});</pre>
+      	      		<div id="div1" class="demo-div clearfix">
+      	      			<div>0</div>
+      	      			<div>1</div>
+      	      			<div>2</div>
+      	      			<div>3</div>
+      	      			<div>4</div>
+      	      			<div>5</div>
+      	      			<div>6</div>
+      	      			<div>7</div>
+      	      			<div>8</div>
+      	      			<div>9</div>
+      	      		</div>
+      	      		<hr/>
+      	      	</div>
+      	      	<div class="span12">
+      	      		<pre>$('#div2').heatChart({blackAndWhite: true, dataTag: 'div'});</pre>
+      	      		<div id="div2" class="demo-div clearfix">
+      	      			<div>0</div>
+      	      			<div>1</div>
+      	      			<div>2</div>
+      	      			<div>3</div>
+      	      			<div>4</div>
+      	      			<div>5</div>
+      	      			<div>6</div>
+      	      			<div>7</div>
+      	      			<div>8</div>
+      	      			<div>9</div>
+      	      		</div>
+      	      		<hr/>
+      	      	</div>
+
+      	      	<div class="span12">
+      	      		<pre>$('#div3').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});</pre>
+      	      		<div id="div3" class="demo-div clearfix">
+      	      			<p><a href="#" title="1 Widget">1 Widget</a> | <a href="#" title="2 Widgets">2 Widgets</a> | <a href="#" title="3 Widgets">3 Widgets</a> | <a href="#" title="4 Widgets">4 Widgets</a> | <a href="#" title="5 Widgets">5 Widgets</a> | <a href="#" title="6 Widgets">6 Widgets</a> | <a href="#" title="7 Widgets">7 Widgets</a> | <a href="#" title="8 Widgets">8 Widgets</a> | <a href="#" title="9 Widgets">9 Widgets</a> | <a href="#" title="10 Widgets">10 Widgets</a></p>
+      	      		</div>
+      	      		<hr/>
+      	      	</div>
+
+      	      	<div class="span12">
+      	      		<pre>$('#table6').heatChart({theta: 200, reverse: true, offset:90});</pre>
+      	      		<table id="table6">
+      	      		  <tbody><tr>
+      	      		    <th></th>
+      	      		    <th>0</th>
+      	      		    <th>1</th>
+      	      		    <th>2</th>
+      	      		    <th>3</th>
+      	      		    <th>4</th>
+      	      		    <th>5</th>
+      	      		    <th>6</th>
+      	      		    <th>7</th>
+      	      		    <th>8</th>
+      	      		    <th>9</th>
+      	      		    <th>10</th>
+      	      		    <th>11</th>
+      	      		    <th>12</th>
+      	      		    <th>13</th>
+      	      		    <th>14</th>
+      	      		    <th>15</th>
+      	      		    <th>16</th>
+      	      		    <th>17</th>
+      	      		    <th>18</th>
+      	      		    <th>19</th>
+      	      		    <th>20</th>
+      	      		    <th>21</th>
+      	      		    <th>22</th>
+      	      		    <th>23</th>
+      	      		  </tr>
+      	      		    <tr>
+      	      		      <th>Sun</th>
+      	      		      <td  title="0.38235294117647056 visits">0.38</td>
+      	      		      <td  title="0.3088235294117647 visits">0.31</td>
+      	      		      <td  title="0.38235294117647056 visits">0.38</td>
+      	      		      <td  title="0.3382352941176471 visits">0.34</td>
+      	      		      <td  title="0.27941176470588236 visits">0.28</td>
+      	      		      <td  title="0.2647058823529412 visits">0.26</td>
+      	      		      <td  title="0.27941176470588236 visits">0.28</td>
+      	      		      <td  title="0.20588235294117646 visits">0.21</td>
+      	      		      <td  title="0.25 visits">0.25</td>
+      	      		      <td  title="0.4411764705882353 visits">0.44</td>
+      	      		      <td  title="0.6029411764705882 visits">0.6</td>
+      	      		      <td  title="0.5441176470588235 visits">0.54</td>
+      	      		      <td  title="0.4852941176470588 visits">0.49</td>
+      	      		      <td  title="0.4117647058823529 visits">0.41</td>
+      	      		      <td  title="0.6323529411764706 visits">0.63</td>
+      	      		      <td  title="0.6323529411764706 visits">0.63</td>
+      	      		      <td  title="0.6617647058823529 visits">0.66</td>
+      	      		      <td  title="0.45588235294117646 visits">0.46</td>
+      	      		      <td  title="0.6029411764705882 visits">0.6</td>
+      	      		      <td  title="0.6176470588235294 visits">0.62</td>
+      	      		      <td  title="0.7058823529411765 visits">0.71</td>
+      	      		      <td  title="0.6029411764705882 visits">0.6</td>
+      	      		      <td  title="0.6323529411764706 visits">0.63</td>
+      	      		      <td  title="0.45588235294117646 visits">0.46</td>
+      	      		    </tr>
+      	      		    <tr>
+      	      		      <th>Mon</th>
+      	      		      <td  title="0.5147058823529411 visits">0.51</td>
+      	      		      <td  title="0.5 visits">0.5</td>
+      	      		      <td  title="0.4117647058823529 visits">0.41</td>
+      	      		      <td  title="0.27941176470588236 visits">0.28</td>
+      	      		      <td  title="0.2647058823529412 visits">0.26</td>
+      	      		      <td  title="0.45588235294117646 visits">0.46</td>
+      	      		      <td  title="0.35294117647058826 visits">0.35</td>
+      	      		      <td  title="0.47058823529411764 visits">0.47</td>
+      	      		      <td  title="1.0 visits">1.0</td>
+      	      		      <td  title="1.5441176470588236 visits">1.54</td>
+      	      		      <td  title="2.1029411764705883 visits">2.1</td>
+      	      		      <td  title="2.235294117647059 visits">2.24</td>
+      	      		      <td  title="2.2058823529411766 visits">2.21</td>
+      	      		      <td  title="2.3676470588235294 visits">2.37</td>
+      	      		      <td  title="2.5294117647058822 visits">2.53</td>
+      	      		      <td  title="2.3823529411764706 visits">2.38</td>
+      	      		      <td  title="2.411764705882353 visits">2.41</td>
+      	      		      <td  title="1.75 visits">1.75</td>
+      	      		      <td  title="1.0588235294117647 visits">1.06</td>
+      	      		      <td  title="0.7352941176470589 visits">0.74</td>
+      	      		      <td  title="0.5294117647058824 visits">0.53</td>
+      	      		      <td  title="1.088235294117647 visits">1.09</td>
+      	      		      <td  title="0.6617647058823529 visits">0.66</td>
+      	      		      <td  title="0.7352941176470589 visits">0.74</td>
+      	      		    </tr>
+      	      		    <tr>
+      	      		      <th>Tues</th>
+      	      		      <td  title="0.44776119402985076 visits">0.45</td>
+      	      		      <td  title="0.4925373134328358 visits">0.49</td>
+      	      		      <td  title="0.5223880597014925 visits">0.52</td>
+      	      		      <td  title="0.3880597014925373 visits">0.39</td>
+      	      		      <td  title="0.29850746268656714 visits">0.3</td>
+      	      		      <td  title="0.5373134328358209 visits">0.54</td>
+      	      		      <td  title="0.3283582089552239 visits">0.33</td>
+      	      		      <td  title="0.417910447761194 visits">0.42</td>
+      	      		      <td  title="1.328358208955224 visits">1.33</td>
+      	      		      <td  title="1.7611940298507462 visits">1.76</td>
+      	      		      <td  title="2.343283582089552 visits">2.34</td>
+      	      		      <td  title="2.4925373134328357 visits">2.49</td>
+      	      		      <td  title="2.298507462686567 visits">2.3</td>
+      	      		      <td  title="2.388059701492537 visits">2.39</td>
+      	      		      <td  title="2.5522388059701493 visits">2.55</td>
+      	      		      <td  title="2.253731343283582 visits">2.25</td>
+      	      		      <td  title="2.6417910447761193 visits">2.64</td>
+      	      		      <td  title="1.6865671641791045 visits">1.69</td>
+      	      		      <td  title="1.0 visits">1.0</td>
+      	      		      <td  title="0.7761194029850746 visits">0.78</td>
+      	      		      <td  title="0.7761194029850746 visits">0.78</td>
+      	      		      <td  title="0.7164179104477612 visits">0.72</td>
+      	      		      <td  title="0.6716417910447762 visits">0.67</td>
+      	      		      <td  title="0.6865671641791045 visits">0.69</td>
+      	      		    </tr>
+      	      		    <tr>
+      	      		      <th>Wed</th>
+      	      		      <td  title="0.7058823529411765 visits">0.71</td>
+      	      		      <td  title="0.4411764705882353 visits">0.44</td>
+      	      		      <td  title="0.36764705882352944 visits">0.37</td>
+      	      		      <td  title="0.39705882352941174 visits">0.4</td>
+      	      		      <td  title="0.45588235294117646 visits">0.46</td>
+      	      		      <td  title="0.35294117647058826 visits">0.35</td>
+      	      		      <td  title="0.5294117647058824 visits">0.53</td>
+      	      		      <td  title="0.5441176470588235 visits">0.54</td>
+      	      		      <td  title="1.338235294117647 visits">1.34</td>
+      	      		      <td  title="1.6470588235294117 visits">1.65</td>
+      	      		      <td  title="2.6470588235294117 visits">2.65</td>
+      	      		      <td  title="2.338235294117647 visits">2.34</td>
+      	      		      <td  title="2.1911764705882355 visits">2.19</td>
+      	      		      <td  title="1.9558823529411764 visits">1.96</td>
+      	      		      <td  title="2.3529411764705883 visits">2.35</td>
+      	      		      <td  title="2.3823529411764706 visits">2.38</td>
+      	      		      <td  title="2.3823529411764706 visits">2.38</td>
+      	      		      <td  title="1.911764705882353 visits">1.91</td>
+      	      		      <td  title="0.9852941176470589 visits">0.99</td>
+      	      		      <td  title="0.8970588235294118 visits">0.9</td>
+      	      		      <td  title="0.8235294117647058 visits">0.82</td>
+      	      		      <td  title="0.9411764705882353 visits">0.94</td>
+      	      		      <td  title="0.9264705882352942 visits">0.93</td>
+      	      		      <td  title="0.6617647058823529 visits">0.66</td>
+      	      		    </tr>
+      	      		    <tr>
+      	      		      <th>Thur</th>
+      	      		      <td  title="0.7058823529411765 visits">0.71</td>
+      	      		      <td  title="0.6764705882352942 visits">0.68</td>
+      	      		      <td  title="0.4264705882352941 visits">0.43</td>
+      	      		      <td  title="0.29411764705882354 visits">0.29</td>
+      	      		      <td  title="0.5 visits">0.5</td>
+      	      		      <td  title="0.39705882352941174 visits">0.4</td>
+      	      		      <td  title="0.39705882352941174 visits">0.4</td>
+      	      		      <td  title="0.4852941176470588 visits">0.49</td>
+      	      		      <td  title="1.2941176470588236 visits">1.29</td>
+      	      		      <td  title="1.7058823529411764 visits">1.71</td>
+      	      		      <td  title="2.5588235294117645 visits">2.56</td>
+      	      		      <td  title="2.426470588235294 visits">2.43</td>
+      	      		      <td  title="2.426470588235294 visits">2.43</td>
+      	      		      <td  title="2.411764705882353 visits">2.41</td>
+      	      		      <td  title="2.3970588235294117 visits">2.4</td>
+      	      		      <td  title="2.6911764705882355 visits">2.69</td>
+      	      		      <td  title="2.5294117647058822 visits">2.53</td>
+      	      		      <td  title="1.661764705882353 visits">1.66</td>
+      	      		      <td  title="1.0735294117647058 visits">1.07</td>
+      	      		      <td  title="0.9264705882352942 visits">0.93</td>
+      	      		      <td  title="0.8676470588235294 visits">0.87</td>
+      	      		      <td  title="0.8382352941176471 visits">0.84</td>
+      	      		      <td  title="0.6029411764705882 visits">0.6</td>
+      	      		      <td  title="0.6176470588235294 visits">0.62</td>
+      	      		    </tr>
+      	      		    <tr>
+      	      		      <th>Fri</th>
+      	      		      <td  title="0.5588235294117647 visits">0.56</td>
+      	      		      <td  title="0.5735294117647058 visits">0.57</td>
+      	      		      <td  title="0.3382352941176471 visits">0.34</td>
+      	      		      <td  title="0.39705882352941174 visits">0.4</td>
+      	      		      <td  title="0.35294117647058826 visits">0.35</td>
+      	      		      <td  title="0.29411764705882354 visits">0.29</td>
+      	      		      <td  title="0.36764705882352944 visits">0.37</td>
+      	      		      <td  title="0.39705882352941174 visits">0.4</td>
+      	      		      <td  title="1.2941176470588236 visits">1.29</td>
+      	      		      <td  title="1.7205882352941178 visits">1.72</td>
+      	      		      <td  title="2.1470588235294117 visits">2.15</td>
+      	      		      <td  title="2.073529411764706 visits">2.07</td>
+      	      		      <td  title="1.9558823529411764 visits">1.96</td>
+      	      		      <td  title="2.2205882352941178 visits">2.22</td>
+      	      		      <td  title="2.264705882352941 visits">2.26</td>
+      	      		      <td  title="2.161764705882353 visits">2.16</td>
+      	      		      <td  title="1.8823529411764706 visits">1.88</td>
+      	      		      <td  title="1.338235294117647 visits">1.34</td>
+      	      		      <td  title="0.6176470588235294 visits">0.62</td>
+      	      		      <td  title="0.4411764705882353 visits">0.44</td>
+      	      		      <td  title="0.45588235294117646 visits">0.46</td>
+      	      		      <td  title="0.47058823529411764 visits">0.47</td>
+      	      		      <td  title="0.4264705882352941 visits">0.43</td>
+      	      		      <td  title="0.38235294117647056 visits">0.38</td>
+      	      		    </tr>
+      	      		    <tr>
+      	      		      <th>Sat</th>
+      	      		      <td  title="0.38235294117647056 visits">0.38</td>
+      	      		      <td  title="0.35294117647058826 visits">0.35</td>
+      	      		      <td  title="0.35294117647058826 visits">0.35</td>
+      	      		      <td  title="0.29411764705882354 visits">0.29</td>
+      	      		      <td  title="0.07352941176470588 visits">0.07</td>
+      	      		      <td  title="0.20588235294117646 visits">0.21</td>
+      	      		      <td  title="0.2647058823529412 visits">0.26</td>
+      	      		      <td  title="0.3235294117647059 visits">0.32</td>
+      	      		      <td  title="0.4264705882352941 visits">0.43</td>
+      	      		      <td  title="0.4117647058823529 visits">0.41</td>
+      	      		      <td  title="0.5294117647058824 visits">0.53</td>
+      	      		      <td  title="0.5 visits">0.5</td>
+      	      		      <td  title="0.6323529411764706 visits">0.63</td>
+      	      		      <td  title="0.47058823529411764 visits">0.47</td>
+      	      		      <td  title="0.5735294117647058 visits">0.57</td>
+      	      		      <td  title="0.7941176470588235 visits">0.79</td>
+      	      		      <td  title="0.6176470588235294 visits">0.62</td>
+      	      		      <td  title="0.4852941176470588 visits">0.49</td>
+      	      		      <td  title="0.6029411764705882 visits">0.6</td>
+      	      		      <td  title="0.45588235294117646 visits">0.46</td>
+      	      		      <td  title="0.4117647058823529 visits">0.41</td>
+      	      		      <td  title="0.36764705882352944 visits">0.37</td>
+      	      		      <td  title="0.29411764705882354 visits">0.29</td>
+      	      		      <td  title="0.5294117647058824 visits">0.53</td>
+      	      		    </tr>
+      	      		</tbody></table>
+      	      		<hr/>
+      	      	</div>
+
+      </div>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="./heatChart.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('#table1').heatChart({theta: 90});
+		$('#table2').heatChart({theta: 90, applyTo: 'color'});
+		$('#table3').heatChart({theta: 180});
+		$('#table4').heatChart({theta: 180, offset: 180});
+		$('#table5').heatChart({theta: 180, offset: 180, reverse: true});
+		$('#div1').heatChart({theta: 360, dataTag: 'div'});
+		$('#div2').heatChart({blackAndWhite: true, dataTag: 'div'});
+		$('#div3').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});
+		$('#table6').heatChart({theta: 200, reverse: true, offset:90});
+		// $('#column2').heatChart({theta: 220, offset: 90, dataTag: 'div'});
+		// $('#column3').heatChart({theta: 220, offset: 180, dataTag: 'div'});
+		// $('#column4').heatChart({theta: 220, offset: 270, dataTag: 'div'});
+	});
+	</script>
+  </body>
+</html>
