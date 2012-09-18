@@ -503,9 +503,43 @@
       	      		<hr/>
       	      	</div>
 
+                <div class="span12">
+                  <pre>$('#div3').heatChart({blackAndWhite: true, discreet: true, steps:3, dataTag: 'div'});</pre>
+                  <div id="div3" class="demo-div clearfix">
+                    <div>0</div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                  </div>
+                  <hr/>
+                </div>
+
+                <div class="span12">
+                  <pre>$('#div4').heatChart({blackAndWhite: true, discreet: true, steps:5, dataTag: 'div'});</pre>
+                  <div id="div4" class="demo-div clearfix">
+                    <div>0</div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                  </div>
+                  <hr/>
+                </div>
+
       	      	<div class="span12">
-      	      		<pre>$('#div3').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});</pre>
-      	      		<div id="div3" class="demo-div clearfix">
+      	      		<pre>$('#div5').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});</pre>
+      	      		<div id="div5" class="demo-div clearfix">
       	      			<p><a href="#" title="1 Widget">1 Widget</a> | <a href="#" title="2 Widgets">2 Widgets</a> | <a href="#" title="3 Widgets">3 Widgets</a> | <a href="#" title="4 Widgets">4 Widgets</a> | <a href="#" title="5 Widgets">5 Widgets</a> | <a href="#" title="6 Widgets">6 Widgets</a> | <a href="#" title="7 Widgets">7 Widgets</a> | <a href="#" title="8 Widgets">8 Widgets</a> | <a href="#" title="9 Widgets">9 Widgets</a> | <a href="#" title="10 Widgets">10 Widgets</a></p>
       	      		</div>
       	      		<hr/>
@@ -766,7 +800,9 @@
 		$('#table5').heatChart({theta: 180, offset: 180, reverse: true});
 		$('#div1').heatChart({theta: 360, dataTag: 'div'});
 		$('#div2').heatChart({blackAndWhite: true, dataTag: 'div'});
-		$('#div3').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});
+    $('#div3').heatChart({blackAndWhite: true, discreet: true, steps:3, dataTag: 'div'});
+    $('#div4').heatChart({blackAndWhite: true, discreet: true, steps:5, dataTag: 'div'});
+		$('#div5').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});
 		$('#table6').heatChart({theta: 200, reverse: true, offset:90});
 		// $('#column2').heatChart({theta: 220, offset: 90, dataTag: 'div'});
 		// $('#column3').heatChart({theta: 220, offset: 180, dataTag: 'div'});
