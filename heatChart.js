@@ -53,7 +53,7 @@
 			}
 
 			var radial_position = Math.abs(Math.floor(value / this.max * this.options.theta) - this.options.theta);
-			radial_position = Math.abs(360 - (radial_position - this.options.offset));
+			radial_position = Math.abs(360 - (radial_position - (this.options.offset + this.options.theta )));
 			$(element).css( this.options.applyTo, 'hsl(' + radial_position + ', ' + this.options.saturation + '%, ' + this.options.lightness + '%)');
 		}
 	};
