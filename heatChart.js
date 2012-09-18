@@ -4,8 +4,10 @@
 		defaults = {
 			dataTag: "td",
 			theta: 220,
+			offset: 0,
 			saturation: 60,
-			lightness: 50
+			lightness: 50,
+			reverse: false
 		};
 	var methods = {
 		get_number_from_html : function( jq_obj ) {
@@ -44,12 +46,16 @@
 		for ( i=0; i<this.values.length; i++ ){
 			var element = this.values[i].element;
 			var value = this.values[i].value;
+			
+			if(this.options.reverse){
+				value = 1 - value;
+			}
 
 			var radial_position = Math.abs(Math.floor(value / this.max * this.options.theta) - this.options.theta);
+			radial_position = Math.abs(360 - (radial_position - this.options.offset));
 			$(element).css('background', 'hsl(' + radial_position + ', ' + this.options.saturation + '%, ' + this.options.saturation + '%)');
 		}
 	};
-
 
   	$.fn[pluginName] = function ( options ) {
   	        return this.each(function () {
