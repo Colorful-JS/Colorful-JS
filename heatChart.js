@@ -13,7 +13,8 @@
 			blackAndWhite: false,
 			discrete: false,
 			steps: 10,
-			colorModel: 'hsla'
+			colorModel: 'hsla',
+			scale: 'linear'
 		};
 	var methods = {
 		get_number_from_html : function( jq_obj ) {
@@ -90,7 +91,17 @@
 		for ( i=0; i<this.values.length; i++ ){
 			var unscaled_val = this.values[i].value;
 			var element = this.values[i].element;
-			var scaled_val = (unscaled_val - this.min)/(this.max - this.min);
+
+			if(this.options.scale == 'linear'){
+				var scaled_val = (unscaled_val - this.min)/(this.max - this.min);
+			} else if(this.options.scale == 'log'){
+				var log_usv, log_min, log_max;
+				log_usv = unscaled_val == 0 ? 0 : Math.log(unscaled_val);
+				log_min = this.min == 0 ? 0 : Math.log(this.min);
+				log_max = this.max == 0 ? 0 : Math.log(this.max);
+				var scaled_val = (log_usv- log_min)/(log_max - log_min);
+			}
+			
 			scaled_val = this.options.reverse ? 1 - scaled_val : scaled_val;
 
 			//Currently no need for this
