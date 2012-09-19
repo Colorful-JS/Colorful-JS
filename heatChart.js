@@ -90,6 +90,22 @@
 			var s = (this.options.colorModel == "grayscale") ? 0 : this.options.saturation;
 			var l = this.options.lightness;
 
+			if(this.options.discreet && this.options.colorModel != 'grayscale'){
+				var d_theta = (this.options.theta / (this.options.steps - 1));
+				var possible_hues = new Array();
+
+				possible_hues.push(0);
+				for(j=1; j<this.options.steps - 1; j++){
+					possible_hues.push(d_theta * j);
+				}
+				possible_hues.push(this.options.theta);
+				
+				var position = Math.floor(scaled_val / (1 / this.options.steps ));
+				if(position == this.options.steps){ position--; }
+
+				h = (possible_hues[position] + this.options.offset) % 360;
+			}
+
 			if(this.options.colorModel == 'rgb' || this.options.colorModel == 'grayscale'){
 				if(this.options.colorModel == 'grayscale'){
 					if(this.options.discreet){
