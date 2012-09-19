@@ -87,7 +87,7 @@
       <p>a 'make data fun' jQuery plugin</p>
       <div class="row">
         <div class="span12">
-          <pre>$('#table1').heatChart({theta: 90});</pre>
+          <pre>$('#table1').heatChart({theta: 90, colorModel: 'rgb'});</pre>
           <table id="table1">
             <tr>
               <td>0</td>
@@ -1021,15 +1021,15 @@
   <script src="./heatChart.js"></script>
   <script type="text/javascript">
   $(function(){
-    $('#table1').heatChart({theta: 90});
+    $('#table1').heatChart({theta: 90, colorModel: 'rgb'});
     $('#table2').heatChart({theta: 90, applyTo: 'color'});
     $('#table3').heatChart({theta: 180});
     $('#table4').heatChart({theta: 180, offset: 180});
     $('#table5').heatChart({theta: 180, offset: 180, reverse: true});
     $('#div1').heatChart({theta: 360, dataTag: 'div'});
-    $('#div2').heatChart({blackAndWhite: true, dataTag: 'div'});
-    $('#div3').heatChart({blackAndWhite: true, discreet: true, steps:3, dataTag: 'div'});
-    $('#div4').heatChart({blackAndWhite: true, discreet: true, steps:5, dataTag: 'div'});
+    $('#div2').heatChart({colorModel: 'grayscale', dataTag: 'div'});
+    $('#div3').heatChart({colorModel: 'grayscale', discreet: true, steps:3, dataTag: 'div'});
+    $('#div4').heatChart({colorModel: 'grayscale', discreet: true, steps:5, dataTag: 'div'});
     $('#div5').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});
     $('#table6').heatChart({theta: 180, reverse: true});
     $('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90});
