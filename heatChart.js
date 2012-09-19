@@ -91,9 +91,19 @@
 			var l = this.options.lightness;
 
 			
+
+			
 			if(this.options.colorModel == 'rgb' || this.options.colorModel == 'grayscale'){
 				if(this.options.colorModel == 'grayscale'){
-					var shade = Math.round(scaled_val * 255);
+					if(this.options.discreet){
+						var increments = 1 / this.options.steps;
+						var steps =  Math.floor(scaled_val / increments);
+						if(steps == this.options.steps){ steps--; }
+						var stepped_value = increments * steps;
+						var shade = Math.round(stepped_value * 255);
+					} else {
+						var shade = Math.round(scaled_val * 255);
+					}
 					var rgb = [shade,shade,shade];
 				} else {
 					var rgb = this.methods.hslToRgb(h,s,l);
