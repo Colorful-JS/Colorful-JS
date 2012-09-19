@@ -252,7 +252,7 @@
         <div class="span12">
           <h3>Choose Your Scale</h3>
           <p>Default is linear, but if you're feeling fancy, why not go logarithmic?</p>
-          <pre>$('#table1point5').heatChart({theta: 90, colorModel: 'rgb', scale: 'log'});</pre>
+          <pre>$('#table1point5, #table1point6').heatChart({theta: 90, scale: 'log'});</pre>
           <table id="table1point5">
             <tr>
               <td>0</td>
@@ -325,6 +325,75 @@
               <td>57</td>
               <td>58</td>
               <td>59</td>
+            </tr>
+          </table>
+          <br/>
+          <table id="table1point6">
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>20</td>
+              <td>30</td>
+              <td>40</td>
+              <td>50</td>
+              <td>60</td>
+              <td>70</td>
+              <td>80</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>100</td>
+              <td>200</td>
+              <td>300</td>
+              <td>400</td>
+              <td>500</td>
+              <td>600</td>
+              <td>700</td>
+              <td>800</td>
+              <td>900</td>
+            </tr>
+            <tr>
+              <td>1000</td>
+              <td>2000</td>
+              <td>3000</td>
+              <td>4000</td>
+              <td>5000</td>
+              <td>6000</td>
+              <td>7000</td>
+              <td>8000</td>
+              <td>9000</td>
+            </tr>
+            <tr>
+              <td>10000</td>
+              <td>20000</td>
+              <td>30000</td>
+              <td>40000</td>
+              <td>50000</td>
+              <td>60000</td>
+              <td>70000</td>
+              <td>80000</td>
+              <td>90000</td>
+            </tr>
+            <tr>
+              <td>100000</td>
+              <td>200000</td>
+              <td>300000</td>
+              <td>400000</td>
+              <td>500000</td>
+              <td>600000</td>
+              <td>700000</td>
+              <td>800000</td>
+              <td>900000</td>
             </tr>
           </table>
           <hr/>
@@ -1185,7 +1254,7 @@
   $(function(){
     $('#table0').heatChart({theta: 90, colorModel: 'rgb'});
     $('#table1').heatChart({theta: 90, discrete: true, steps: 3});
-    $('#table1point5').heatChart({theta: 90, colorModel: 'rgb', scale: 'log'});
+    $('#table1point5, #table1point6').heatChart({theta: 90, scale: 'log'});
     $('#table2').heatChart({theta: 90, applyTo: 'color'});
     $('#table3').heatChart({theta: 180});
     $('#table4').heatChart({theta: 180, offset: 180});
