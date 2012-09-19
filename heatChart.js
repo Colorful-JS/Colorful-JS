@@ -85,8 +85,7 @@
 			//Currently no need for this
 			//this.values[i].scaled_val = scaled_val;
 
-			var h = scaled_val * this.options.theta;
-			// h = Math.abs(360 - (h - (this.options.offset + this.options.theta )));
+			var h = ((scaled_val * this.options.theta) + this.options.offset) % 360;
 			var s = (this.options.colorModel == "grayscale") ? 0 : this.options.saturation;
 			var l = this.options.lightness;
 
@@ -101,7 +100,7 @@
 				$(element).css( this.options.applyTo, 'rgb(' + Math.round(rgb[0]) + ', ' + Math.round(rgb[1]) + ', ' + Math.round(rgb[2]) + ')');
 			
 			} else if(this.options.colorModel == 'hsla'){
-				//hsl and hsla have the same browser support, so just use hsla
+				// hsl and hsla have the same browser support, so just use hsla
 				$(element).css( this.options.applyTo, 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')');
 			}
 
