@@ -11,7 +11,7 @@
 			alpha: 1,
 			reverse: false,
 			blackAndWhite: false,
-			discreet: false,
+			discrete: false,
 			steps: 10,
 			colorModel: 'hsla'
 		};
@@ -66,7 +66,7 @@
 		this.min = Infinity;
 		this.values = new Array();
 
-		if(this.options.discreet && this.options.colorModel != 'grayscale'){
+		if(this.options.discrete && this.options.colorModel != 'grayscale'){
 			var d_theta = (this.options.theta / (this.options.steps - 1));
 			this.possible_hues = new Array();
 			this.possible_hues.push(0);
@@ -100,7 +100,7 @@
 			var s = (this.options.colorModel == "grayscale") ? 0 : this.options.saturation;
 			var l = this.options.lightness;
 
-			if(this.options.discreet && this.options.colorModel != 'grayscale'){
+			if(this.options.discrete && this.options.colorModel != 'grayscale'){
 				var position = Math.floor(scaled_val / (1 / this.options.steps ));
 				if(position == this.options.steps){ position--; }
 
@@ -109,7 +109,7 @@
 
 			if(this.options.colorModel == 'rgb' || this.options.colorModel == 'grayscale'){
 				if(this.options.colorModel == 'grayscale'){
-					if(this.options.discreet){
+					if(this.options.discrete){
 						var increments = 1 / this.options.steps;
 						var steps =  Math.floor(scaled_val / increments);
 						if(steps == this.options.steps){ steps--; }

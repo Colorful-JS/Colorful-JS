@@ -83,10 +83,15 @@
     </div>
 
     <div class="container">
-      <h1>HeatChart.js</h1>
-      <p>Makes Data Colorful</p>
+      <div class="hero-unit">
+        <h1>HeatChart.js</h1>
+        <p>Makes Data Beautiful</p>
+      </div>
+      
       <div class="row">
         <div class="span12">
+          <h3>RBG Compatible</h3>
+          <p>HeatChart uses HSL colorspace by default, but if you're stuck with IE8 or lower, you can specify the use of RGB colorspace (at a slight performance cost).</p>
           <pre>$('#table0').heatChart({theta: 90, colorModel: 'rgb'});</pre>
           <table id="table0">
             <tr>
@@ -165,7 +170,9 @@
           <hr/>
         </div>
         <div class="span12">
-          <pre>$('#table1').heatChart({theta: 90, discreet: true, steps: 6});</pre>
+          <h3>Discrete Color Values</h3>
+          <p>If you don't want a full gradient, you can pass your desired number of color steps. Also compatible with grayscale colorspace.</p>
+          <pre>$('#table1').heatChart({theta: 90, discrete: true, steps: 3});</pre>
           <table id="table1">
             <tr>
               <td>0</td>
@@ -243,6 +250,8 @@
           <hr/>
         </div>
         <div class="span12">
+          <h3>Color What You Want</h3>
+          <p>If you don't want to apply the coloring to element backrounds, pass your desired alternative CSS attribute.</p>
                   <pre>$('#table2').heatChart({theta: 90, applyTo: 'color'});</pre>
                   <table id="table2">
                     <tr>
@@ -321,6 +330,8 @@
                   <hr/>
                 </div>
                 <div class="span12">
+                  <h3>Size of the Spectrum</h3>
+                  <p>Choose the spectrum width by specifying how many degrees around the color wheel you would like to travel.</p>
                   <pre>$('#table3').heatChart({theta: 180});</pre>
                   <table id="table3">
                     <tr>
@@ -399,6 +410,8 @@
                   <hr/>
                 </div>
                 <div class="span12">
+                  <h3>Fast Forward</h3>
+                  <p>If you would like to use a particular portion of the spectrum, define an offset (in degrees) for the start of your theta region.</p>
                   <pre>$('#table4').heatChart({theta: 180, offset: 180});</pre>
                   <table id="table4">
                     <tr>
@@ -477,6 +490,8 @@
                   <hr/>
                 </div>
                 <div class="span12">
+                  <h3>Reverse! Reverse!</h3>
+                  <p>Optionally travel around the color spectrum in reverse.</p>
                   <pre>$('#table5').heatChart({theta: 180, offset: 180, reverse: true});</pre>
                   <table id="table5">
                     <tr>
@@ -555,6 +570,8 @@
                   <hr/>
                 </div>
                 <div class="span12">
+                  <h3>Please don't make me use tables...</h3>
+                  <p>Use whatever you want. Simply specify which type of HTML tag should be parsed for numerical values.</p>
                   <pre>$('#div1').heatChart({theta: 360, dataTag: 'div'});</pre>
                   <div id="div1" class="demo-div clearfix">
                     <div>0</div>
@@ -571,6 +588,8 @@
                   <hr/>
                 </div>
                 <div class="span12">
+                  <h3>Going Grey (or Gray)</h3>
+                  <p>Hate color? Go grayscale.</p>
                   <pre>$('#div2').heatChart({colorModel: 'grayscale', dataTag: 'div'});</pre>
                   <div id="div2" class="demo-div clearfix">
                     <div>0</div>
@@ -588,7 +607,7 @@
                 </div>
 
                 <div class="span12">
-                  <pre>$('#div3').heatChart({colorModel: 'grayscale', discreet: true, steps:3, dataTag: 'div'});</pre>
+                  <pre>$('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, dataTag: 'div'});</pre>
                   <div id="div3" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -605,7 +624,7 @@
                 </div>
 
                 <div class="span12">
-                  <pre>$('#div4').heatChart({colorModel: 'grayscale', discreet: true, steps:5, dataTag: 'div'});</pre>
+                  <pre>$('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, dataTag: 'div'});</pre>
                   <div id="div4" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -622,6 +641,8 @@
                 </div>
 
                 <div class="span12">
+                  <h3>Smart Parsing</h3>
+                  <p>Values in parse elements needn't be entirely numeric. We'll do our best to pull out the numbers.</p>
                   <pre>$('#div5').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});</pre>
                   <div id="div5" class="demo-div clearfix">
                     <p><a href="#" title="1 Widget">1 Widget</a> | <a href="#" title="2 Widgets">2 Widgets</a> | <a href="#" title="3 Widgets">3 Widgets</a> | <a href="#" title="4 Widgets">4 Widgets</a> | <a href="#" title="5 Widgets">5 Widgets</a> | <a href="#" title="6 Widgets">6 Widgets</a> | <a href="#" title="7 Widgets">7 Widgets</a> | <a href="#" title="8 Widgets">8 Widgets</a> | <a href="#" title="9 Widgets">9 Widgets</a> | <a href="#" title="10 Widgets">10 Widgets</a></p>
@@ -852,7 +873,9 @@
                   <hr/>
                 </div>
                 <div class="span12">
-                  <pre>$('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90});</pre>
+                  <h3>Customize Lightness and Saturation (and Apha Too)</h3>
+                  <p>HeatChart assigns hues to data in HSL colorspace. The S and the L (and the alpha) are up to you. No alpha for you if you are using RGB colorspace. RGB should only be used for compatibility with the browsers that shall not be named.</p>
+                  <pre>$('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90, lightness:40});</pre>
                   <table id="table7" class="pattern-background">
                     <tbody><tr>
                       <th></th>
@@ -1076,42 +1099,23 @@
 
       </div>
     </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap-transition.js"></script>
-    <script src="../assets/js/bootstrap-alert.js"></script>
-    <script src="../assets/js/bootstrap-modal.js"></script>
-    <script src="../assets/js/bootstrap-dropdown.js"></script>
-    <script src="../assets/js/bootstrap-scrollspy.js"></script>
-    <script src="../assets/js/bootstrap-tab.js"></script>
-    <script src="../assets/js/bootstrap-tooltip.js"></script>
-    <script src="../assets/js/bootstrap-popover.js"></script>
-    <script src="../assets/js/bootstrap-button.js"></script>
-    <script src="../assets/js/bootstrap-collapse.js"></script>
-    <script src="../assets/js/bootstrap-carousel.js"></script>
-    <script src="../assets/js/bootstrap-typeahead.js"></script>
-  -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
   <script src="./heatChart.js"></script>
   <script type="text/javascript">
   $(function(){
     $('#table0').heatChart({theta: 90, colorModel: 'rgb'});
-    $('#table1').heatChart({theta: 90, discreet: true, steps: 6});
+    $('#table1').heatChart({theta: 90, discrete: true, steps: 3});
     $('#table2').heatChart({theta: 90, applyTo: 'color'});
     $('#table3').heatChart({theta: 180});
     $('#table4').heatChart({theta: 180, offset: 180});
     $('#table5').heatChart({theta: 180, offset: 180, reverse: true});
     $('#div1').heatChart({theta: 360, dataTag: 'div'});
     $('#div2').heatChart({colorModel: 'grayscale', dataTag: 'div'});
-    $('#div3').heatChart({colorModel: 'grayscale', discreet: true, steps:3, dataTag: 'div'});
-    $('#div4').heatChart({colorModel: 'grayscale', discreet: true, steps:5, dataTag: 'div'});
+    $('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, dataTag: 'div'});
+    $('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, dataTag: 'div'});
     $('#div5').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});
     $('#table6').heatChart({theta: 180, reverse: true});
-    $('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90});
+    $('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90, lightness: 40});
   });
   </script>
   </body>
