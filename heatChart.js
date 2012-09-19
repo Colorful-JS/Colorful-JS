@@ -90,9 +90,6 @@
 			var s = (this.options.colorModel == "grayscale") ? 0 : this.options.saturation;
 			var l = this.options.lightness;
 
-			
-
-			
 			if(this.options.colorModel == 'rgb' || this.options.colorModel == 'grayscale'){
 				if(this.options.colorModel == 'grayscale'){
 					if(this.options.discreet){
@@ -114,32 +111,6 @@
 				// hsl and hsla have the same browser support, so just use hsla
 				$(element).css( this.options.applyTo, 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')');
 			}
-
-			// if(this.options.discreet){
-			// 	if(this.options.blackAndWhite){
-			// 		var increments = 1 / this.options.steps;
-			// 		var steps =  Math.floor(scaled_val / increments);
-			// 		if(steps == this.options.steps){ steps--; }
-			// 		var stepped_value = increments * steps;
-			// 		console.log('increments: ' + increments);
-			// 		console.log('steps: ' + steps);
-			// 		console.log('stepped_value: ' + stepped_value);
-			// 		console.log(hue);
-			// 		var hue = Math.floor(stepped_value * 255);
-			// 		$(element).css( this.options.applyTo, 'rgb(' + hue + ', ' + hue + ', ' + hue + ')');
-			// 	} else {
-			// 		//TKTKTKTKTK
-			// 	}
-			// } else {
-			// 	if(this.options.blackAndWhite){
-			// 		var hue = Math.floor(( scaled_val ) * 255 );
-			// 		$(element).css( this.options.applyTo, 'rgb(' + hue + ', ' + hue + ', ' + hue + ')');
-			// 	} else {
-			// 		var hue = Math.abs(Math.floor(scaled_val * this.options.theta) - this.options.theta);
-			// 		hue = Math.abs(360 - (hue - (this.options.offset + this.options.theta )));
-			// 		$(element).css( this.options.applyTo, 'hsla(' + hue + ', ' + this.options.saturation + '%, ' + this.options.lightness + '%, ' + this.options.alpha + ')');
-			// 	}
-			// }
 		}
 	};
 
