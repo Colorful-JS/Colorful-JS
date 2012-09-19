@@ -42,24 +42,25 @@
 		for ( i=0; i<this.children.length; i++ ){
 			var value = this.methods.get_number_from_html(this.children[i]);
 			if( !isNaN(value) ){
-				this.values.push({element: this.children[i], value: value});
+				this.values.push({element: this.children[i], value: value, scaled_val: null});
 				if( value > this.max ) { this.max = value; }
 				if( value < this.min ) { this.min = value; }
 			}
 		}
 
 		for ( i=0; i<this.values.length; i++ ){
+			var unscaled_val = this.values[i].value;
 			var element = this.values[i].element;
-			var value = this.values[i].value;
-			
-			if(this.options.reverse){
-				value = 1 - value;
-			}
+			var scaled_val = (unscaled_val - this.min)/(this.max - this.min);
+			scaled_val = this.options.reverse ? 1 - scaled_val : scaled_val;
+
+			//Currently no need for this
+			//this.values[i].scaled_val = scaled_val;
 
 			if(this.options.discreet){
 				if(this.options.blackAndWhite){
 					var increments = 1 / this.options.steps;
-					var steps =  Math.floor(value / this.max / increments);
+					var steps =  Math.floor(scaled_val / increments);
 					if(steps == this.options.steps){ steps--; }
 					var stepped_value = increments * steps;
 					console.log('increments: ' + increments);
@@ -73,10 +74,10 @@
 				}
 			} else {
 				if(this.options.blackAndWhite){
-					var hue = Math.floor(( value / this.max ) * 255 );
+					var hue = Math.floor(( scaled_val ) * 255 );
 					$(element).css( this.options.applyTo, 'rgb(' + hue + ', ' + hue + ', ' + hue + ')');
 				} else {
-					var hue = Math.abs(Math.floor(value / this.max * this.options.theta) - this.options.theta);
+					var hue = Math.abs(Math.floor(scaled_val * this.options.theta) - this.options.theta);
 					hue = Math.abs(360 - (hue - (this.options.offset + this.options.theta )));
 					$(element).css( this.options.applyTo, 'hsla(' + hue + ', ' + this.options.saturation + '%, ' + this.options.lightness + '%, ' + this.options.alpha + ')');
 				}
