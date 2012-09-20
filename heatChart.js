@@ -185,7 +185,7 @@
 						l = ((scaled_value * this.options.portion * 100) + this.options.offset) % 100;
 						break;
 					case('a'):
-						a = ((scaled_value * this.options.portion) + this.options.offset) % 1;
+						a = ((scaled_value * this.options.portion) + this.options.offset);
 						break;
 				}
 			}
