@@ -1,6 +1,6 @@
 ;(function( $, window, document ){
 
-	var pluginName = 'heatChart',
+	var pluginName = 'colorful',
 		defaults = {
 			mapDataTo: ["h"],
 
@@ -29,7 +29,7 @@
 			min_val: null,
 			max_val: null,
 
-			addedClass: "heat-chart-el"
+			addedClass: "colorful-el"
 			
 		};
 	var methods = {

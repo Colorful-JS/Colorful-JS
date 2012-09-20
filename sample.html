@@ -11,6 +11,7 @@
     <!-- Le styles -->
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
     <link href="prettify.css" type="text/css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
     <style>
       body {
         padding-top: 30px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -59,6 +60,7 @@
         box-sizing:border-box;
       }
       #intro {
+        font-family: 'Ubuntu', sans-serif;
         box-shadow: inset 0 0 40px 0 rgba(0,0,0,0.6);
         color: #FFF;
         border-radius:15px;
@@ -70,6 +72,16 @@
         padding: 10px;
         border: none;
         box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.1);
+      }
+      #mri {
+        background: url(mri_rmommaerts.jpg) no-repeat;
+        width:395px;
+        height:500px;
+      }
+
+      #mri tr td {
+        height:7px;
+        width:7px;
       }
     </style>
     
@@ -97,7 +109,7 @@
 
     <div class="container">
       <div id="intro" class="hero-unit">
-        <h1>HeatChart.js</h1>
+        <h1>Colorful.js</h1>
         <p>Makes Data Beautiful</p>
       </div>
       
@@ -107,6 +119,7 @@
           <p>HeatChart uses HSL colorspace by default, but if you're stuck with IE8 or lower, you can specify the use of RGB colorspace (at a slight performance cost).</p>
           <pre class="prettyprint">$('#table0').heatChart({theta: 90, colorModel: 'rgb'});</pre>
           <h4>Pretty (HSL)</h4>
+          <div class="well">
           <table id="table0">
             <tr>
               <td data-number="9">0</td>
@@ -169,9 +182,10 @@
               <td>49</td>
             </tr>
           </table>
-
+        </div>
           <br/>
           <h4>Pretty Ugly (RGB)</h4>
+          <div class="well">
           <table id="rgb-sample">
             <tr>
               <td data-value="0">0</td>
@@ -234,6 +248,7 @@
               <td data-value="0.98">49</td>
             </tr>
           </table>
+        </div>
           <hr/>
         </div>
         <div class="span12">
@@ -1312,6 +1327,850 @@
                   </tbody></table>
                   <hr/>
                 </div>
+                <div class="span12">
+                  <h3>Customize Lightness and Saturation (and Apha Too)</h3>
+                  <p>HeatChart assigns hues to data in HSL colorspace. The S and the L (and the alpha) are up to you. No alpha for you if you are using RGB colorspace. RGB should only be used for compatibility with the browsers that shall not be named.</p>
+                  <pre class="prettyprint">$('#mri').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90, lightness:40});</pre>
+                  <table id="mri" class="mri">
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0.5"> </td>
+                      <td data-val="0.7"> </td>
+                      <td data-val="1"> </td>
+                      <td data-val="0.7"> </td>
+                      <td data-val="0.5"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                    <tr>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                      <td data-val="0"> </td>
+                    </tr>
+                  </table>
+                </div>
 
       </div>
     </div> <!-- /container -->
@@ -1347,6 +2206,7 @@
     $('#div5').heatChart({theta: 220, elementSelector: 'a', attributeToColor: 'color'});
     $('#table6').heatChart({portion: 0.5, reverse: true});
     $('#table7').heatChart({portion: 0.5, reverse: true, alpha:0.5, saturation:90, lightness: 40});
+    $('#mri').heatChart({portion: 0.25, reverse: true, alpha:0.5, saturation:100, dataAttribute: 'data-val'});
 
     prettyPrint();
 
