@@ -2,6 +2,8 @@
 
 	var pluginName = 'heatChart',
 		defaults = {
+			mapDataTo: "hue",
+
 			elementSelector: "td",
 			preventionSelector: null,
 			attributeToColor: "background",
@@ -9,6 +11,8 @@
 			hue: 0,
 			theta: 220,
 			offset: 0,
+			colorModel: "hsla",
+			colors: null,
 
 			saturation: 70,
 			lightness: 50,
@@ -19,18 +23,30 @@
 			discrete: false,
 			steps: 10,
 
-			colorModel: 'hsla',
-			colors: null,
-			scale: 'linear',
+			scale: "linear",
 			min_val: null,
 			max_val: null,
 
-			addedClass: 'heat-chart-el'
+			addedClass: "heat-chart-el"
 			
 		};
 	var methods = {
 		get_number_from_html : function( jq_obj ) {
 			return parseFloat($(jq_obj).html());
+		},
+		scale_feature : function( scale, unscaled_value, global_min, global_max ) {
+			var scaled_value = null;
+			switch(scale) {
+				case 'linear':
+					return (global_max - global_min) == 0 ? 0 : (unscaled_value - global_min)/(global_max - global_min);
+					break;
+				case 'log':
+					unscaled_value = unscaled_value == 0 ? 0 : Math.log(unscaled_value);
+					global_min = global_min == 0 ? 0 : Math.log(global_min);
+					global_max = global_max == 0 ? 0 : Math.log(global_max);
+					return (global_max - global_min) == 0 ? 0 : (unscaled_value - global_min)/(global_max - global_min);
+					break;
+			}
 		},
 		hslToRgb: function(h,s,l){
 		    var r, g, b;
@@ -79,11 +95,13 @@
 		this.min = Infinity;
 		this.values = new Array();
 
+		// If the user has passed an array of colors to use
 		if(this.options.colors){
 			this.options.discrete = true;
 			this.options.steps = this.options.colors.length;
 		}
 
+		// Build our possible hues array if we're going with a discrete number of colors
 		if(this.options.discrete && this.options.colorModel != 'grayscale'){
 			this.possible_hues = new Array();
 			if(this.options.colors){
@@ -101,8 +119,10 @@
 			
 		}
 
+		// Get the elements to process
 		this.children = $(this.element).find(this.options.elementSelector).not(this.options.preventionSelector);
 
+		// Build our data array, and set our min and max properly
 		for ( i=0; i<this.children.length; i++ ){
 			var value = this.methods.get_number_from_html(this.children[i]);
 			if( !isNaN(value) && (this.options.min_val == null || value > this.options.min_val) && (this.options.max_val == null || value < this.options.max_val) ){
@@ -112,31 +132,28 @@
 			}
 		}
 
+		// Iterate through our elements and make the magic happen
 		for ( i=0; i<this.values.length; i++ ){
-			var unscaled_val = this.values[i].value;
-			var element = this.values[i].element;
+			var unscaled_val, element, scaled_value, color;
 
-			if(this.options.scale == 'linear'){
-				var scaled_val = (unscaled_val - this.min)/(this.max - this.min);
-			} else if(this.options.scale == 'log'){
-				var log_usv, log_min, log_max;
-				log_usv = unscaled_val == 0 ? 0 : Math.log(unscaled_val);
-				log_min = this.min == 0 ? 0 : Math.log(this.min);
-				log_max = this.max == 0 ? 0 : Math.log(this.max);
-				var scaled_val = (log_usv- log_min)/(log_max - log_min);
-			}
-			
-			scaled_val = this.options.reverse ? 1 - scaled_val : scaled_val;
+			unscaled_value = this.values[i].value;
+			element = this.values[i].element;
+
+			// Feature Scaling
+			scaled_value = this.methods.scale_feature(this.options.scale, unscaled_value, this.min, this.max);
+
+			// Reverse if necessary
+			scaled_value = this.options.reverse ? 1 - scaled_value : scaled_value;
 
 			//Currently no need for this
 			//this.values[i].scaled_val = scaled_val;
 
-			var h = ((scaled_val * this.options.theta) + this.options.offset) % 360;
+			var h = ((scaled_value * this.options.theta) + this.options.offset) % 360;
 			var s = (this.options.colorModel == "grayscale") ? 0 : this.options.saturation;
 			var l = this.options.lightness;
 
 			if(this.options.discrete && this.options.colorModel != 'grayscale'){
-				var position = Math.floor(scaled_val / (1 / this.options.steps ));
+				var position = Math.floor(scaled_value / (1 / this.options.steps ));
 				if(position == this.options.steps){ position--; }
 
 				h = (this.possible_hues[position] + this.options.offset) % 360;
@@ -146,7 +163,7 @@
 				if(this.options.colorModel == 'grayscale'){
 					if(this.options.discrete){
 						var increments = 1 / this.options.steps;
-						var steps =  Math.floor(scaled_val / increments);
+						var steps =  Math.floor(scaled_value / increments);
 						if(steps == this.options.steps){ steps--; }
 						var stepped_value = increments * steps;
 						var shade = Math.round(stepped_value * 255);
@@ -157,13 +174,16 @@
 				} else {
 					var rgb = this.methods.hslToRgb(h,s,l);
 				}
-				$(element).css( this.options.attributeToColor, 'rgb(' + Math.round(rgb[0]) + ', ' + Math.round(rgb[1]) + ', ' + Math.round(rgb[2]) + ')');
+				//$(element).css( this.options.attributeToColor, 'rgb(' + Math.round(rgb[0]) + ', ' + Math.round(rgb[1]) + ', ' + Math.round(rgb[2]) + ')');
+				color = 'rgb(' + Math.round(rgb[0]) + ', ' + Math.round(rgb[1]) + ', ' + Math.round(rgb[2]) + ')';
 			
 			} else if(this.options.colorModel == 'hsla'){
 				// hsl and hsla have the same browser support, so just use hsla
-				$(element).css( this.options.attributeToColor, 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')');
+				//$(element).css( this.options.attributeToColor, 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')');
+				color = 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')';
 			}
-			$(element).addClass(this.options.addedClass);
+
+			$(element).addClass( this.options.addedClass ).css( this.options.attributeToColor, color );
 		}
 	};
 
