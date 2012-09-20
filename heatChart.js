@@ -17,7 +17,8 @@
 			scale: 'linear',
 			min_val: null,
 			max_val: null,
-			added_class: 'heat-chart-el'
+			added_class: 'heat-chart-el',
+			colors: null
 		};
 	var methods = {
 		get_number_from_html : function( jq_obj ) {
@@ -70,14 +71,26 @@
 		this.min = Infinity;
 		this.values = new Array();
 
+		if(this.options.colors){
+			this.options.discrete = true;
+			this.options.steps = this.options.colors.length;
+		}
+
 		if(this.options.discrete && this.options.colorModel != 'grayscale'){
-			var d_theta = (this.options.theta / (this.options.steps - 1));
 			this.possible_hues = new Array();
-			this.possible_hues.push(0);
-			for(j=1; j<this.options.steps - 1; j++){
-				this.possible_hues.push(d_theta * j);
+			if(this.options.colors){
+				for(j=0; j<this.options.colors.length; j++){
+					this.possible_hues.push(this.options.colors[j]);
+				}
+			} else {
+				var d_theta = (this.options.theta / (this.options.steps - 1));
+				for(j=1; j<this.options.steps - 1; j++){
+					this.possible_hues.push(d_theta * j);
+				}
+				this.possible_hues.unshift(0);
+				this.possible_hues.push(this.options.theta);
 			}
-			this.possible_hues.push(this.options.theta);
+			
 		}
 
 		this.children = $(this.element).find(this.options.dataTag);
