@@ -2,23 +2,31 @@
 
 	var pluginName = 'heatChart',
 		defaults = {
-			dataTag: "td",
-			applyTo: "background",
+			elementSelector: "td",
+			preventionSelector: null,
+			attributeToColor: "background",
+			
+			hue: 0,
 			theta: 220,
 			offset: 0,
+
 			saturation: 70,
 			lightness: 50,
 			alpha: 1,
+
 			reverse: false,
-			blackAndWhite: false,
+
 			discrete: false,
 			steps: 10,
+
 			colorModel: 'hsla',
+			colors: null,
 			scale: 'linear',
 			min_val: null,
 			max_val: null,
-			added_class: 'heat-chart-el',
-			colors: null
+
+			addedClass: 'heat-chart-el'
+			
 		};
 	var methods = {
 		get_number_from_html : function( jq_obj ) {
@@ -93,7 +101,7 @@
 			
 		}
 
-		this.children = $(this.element).find(this.options.dataTag);
+		this.children = $(this.element).find(this.options.elementSelector).not(this.options.preventionSelector);
 
 		for ( i=0; i<this.children.length; i++ ){
 			var value = this.methods.get_number_from_html(this.children[i]);
@@ -149,13 +157,13 @@
 				} else {
 					var rgb = this.methods.hslToRgb(h,s,l);
 				}
-				$(element).css( this.options.applyTo, 'rgb(' + Math.round(rgb[0]) + ', ' + Math.round(rgb[1]) + ', ' + Math.round(rgb[2]) + ')');
+				$(element).css( this.options.attributeToColor, 'rgb(' + Math.round(rgb[0]) + ', ' + Math.round(rgb[1]) + ', ' + Math.round(rgb[2]) + ')');
 			
 			} else if(this.options.colorModel == 'hsla'){
 				// hsl and hsla have the same browser support, so just use hsla
-				$(element).css( this.options.applyTo, 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')');
+				$(element).css( this.options.attributeToColor, 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')');
 			}
-			$(element).addClass(this.options.added_class);
+			$(element).addClass(this.options.addedClass);
 		}
 	};
 

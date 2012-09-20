@@ -401,7 +401,7 @@
         <div class="span12">
           <h3>Color What You Want</h3>
           <p>If you don't want to apply the coloring to element backrounds, pass your desired alternative CSS attribute.</p>
-                  <pre>$('#table2').heatChart({theta: 90, applyTo: 'color'});</pre>
+                  <pre>$('#table2').heatChart({theta: 90, attributeToColor: 'color'});</pre>
                   <table id="table2">
                     <tr>
                       <td>0</td>
@@ -721,7 +721,7 @@
                 <div class="span12">
                   <h3>Please don't make me use tables...</h3>
                   <p>Use whatever you want. Simply specify which type of HTML tag should be parsed for numerical values.</p>
-                  <pre>$('#div1').heatChart({theta: 360, dataTag: 'div'});</pre>
+                  <pre>$('#div1').heatChart({theta: 360, elementSelector: 'div'});</pre>
                   <div id="div1" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -739,7 +739,7 @@
                 <div class="span12">
                   <h3>Going Grey (or Gray)</h3>
                   <p>Hate color? Go grayscale.</p>
-                  <pre>$('#div2').heatChart({colorModel: 'grayscale', dataTag: 'div'});</pre>
+                  <pre>$('#div2').heatChart({colorModel: 'grayscale', elementSelector: 'div'});</pre>
                   <div id="div2" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -756,7 +756,7 @@
                 </div>
 
                 <div class="span12">
-                  <pre>$('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, dataTag: 'div'});</pre>
+                  <pre>$('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, elementSelector: 'div'});</pre>
                   <div id="div3" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -773,7 +773,7 @@
                 </div>
 
                 <div class="span12">
-                  <pre>$('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, dataTag: 'div'});</pre>
+                  <pre>$('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, elementSelector: 'div'});</pre>
                   <div id="div4" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -792,7 +792,7 @@
                 <div class="span12">
                   <h3>Smart Parsing</h3>
                   <p>We're totally cool with floats. Furthermore, values in your elements needn't even need to be entirely numeric. We'll do our best to pull out the right numbers.</p>
-                  <pre>$('#div5').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});</pre>
+                  <pre>$('#div5').heatChart({theta: 220, elementSelector: 'a', attributeToColor: 'color'});</pre>
                   <div id="div5" class="demo-div clearfix">
                     <p><a href="#" title="1 Widget">1 Widget</a> | <a href="#" title="2 Widgets">2 Widgets</a> | <a href="#" title="3 Widgets">3 Widgets</a> | <a href="#" title="4 Widgets">4 Widgets</a> | <a href="#" title="5 Widgets">5 Widgets</a> | <a href="#" title="6 Widgets">6 Widgets</a> | <a href="#" title="7 Widgets">7 Widgets</a> | <a href="#" title="8 Widgets">8 Widgets</a> | <a href="#" title="9 Widgets">9 Widgets</a> | <a href="#" title="10 Widgets">10 Widgets</a></p>
                   </div>
@@ -1255,15 +1255,15 @@
     $('#table0').heatChart({theta: 90, colorModel: 'rgb'});
     $('#table1').heatChart({theta: 90, discrete: true, steps: 3});
     $('#table1point5, #table1point6').heatChart({theta: 90, scale: 'log'});
-    $('#table2').heatChart({theta: 90, applyTo: 'color'});
+    $('#table2').heatChart({theta: 90, attributeToColor: 'color'});
     $('#table3').heatChart({theta: 180});
     $('#table4').heatChart({theta: 180, offset: 180});
     $('#table5').heatChart({theta: 180, offset: 180, reverse: true});
-    $('#div1').heatChart({theta: 360, dataTag: 'div'});
-    $('#div2').heatChart({colorModel: 'grayscale', dataTag: 'div'});
-    $('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, dataTag: 'div'});
-    $('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, dataTag: 'div'});
-    $('#div5').heatChart({theta: 220, dataTag: 'a', applyTo: 'color'});
+    $('#div1').heatChart({theta: 360, elementSelector: 'div'});
+    $('#div2').heatChart({colorModel: 'grayscale', elementSelector: 'div'});
+    $('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, elementSelector: 'div'});
+    $('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, elementSelector: 'div'});
+    $('#div5').heatChart({theta: 220, elementSelector: 'a', attributeToColor: 'color'});
     $('#table6').heatChart({theta: 180, reverse: true});
     $('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90, lightness: 40});
   });
