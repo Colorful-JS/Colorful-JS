@@ -122,18 +122,35 @@
 
 		// Build our possible hues array if we're going with a discrete number of colors
 		if(this.options.discrete && this.options.colorModel != 'grayscale'){
+
 			this.possible_hues = new Array();
+			this.possible_sats = new Array();
+			this.possible_lights = new Array();
+			this.possible_alphas = new Array();
+
 			if(this.options.colors){
 				for(j=0; j<this.options.colors.length; j++){
 					this.possible_hues.push(this.options.colors[j]);
 				}
 			} else {
-				var d_theta = (this.options.theta / (this.options.steps - 1));
+				var d_theta = (this.options.portion / (this.options.steps - 1));
 				for(j=1; j<this.options.steps - 1; j++){
-					this.possible_hues.push(d_theta * j);
+					this.possible_hues.push(d_theta * j * 360);
+					this.possible_sats.push(d_theta * j * 100);
+					this.possible_lights.push(d_theta * j * 100);
+					this.possible_alphas.push(d_theta * j);
 				}
 				this.possible_hues.unshift(0);
-				this.possible_hues.push(this.options.theta);
+				this.possible_hues.push(this.options.portion * 360);
+
+				this.possible_sats.unshift(0);
+				this.possible_sats.push(this.options.portion * 100);
+
+				this.possible_lights.unshift(0);
+				this.possible_lights.push(this.options.portion * 100);
+
+				this.possible_alphas.unshift(0);
+				this.possible_alphas.push(this.options.portion * 100);
 			}
 			
 		}
@@ -176,13 +193,13 @@
 				
 				switch(this.options.mapDataTo[j]){
 					case('h'):
-						h = ((scaled_value * this.options.portion * 360) + this.options.offset) % 360;
+						h = ((scaled_value * this.options.portion * 360) + (this.options.offset * 360)) % 360;
 						break;
 					case('s'):
-						s = ((scaled_value * this.options.portion * 100) + this.options.offset) % 100;
+						s = ((scaled_value * this.options.portion * 100) + (this.options.offset * 100)) % 100;
 						break;
 					case('l'):
-						l = ((scaled_value * this.options.portion * 100) + this.options.offset) % 100;
+						l = ((scaled_value * this.options.portion * 100) + (this.options.offset * 100)) % 100;
 						break;
 					case('a'):
 						a = ((scaled_value * this.options.portion) + this.options.offset);
@@ -195,7 +212,24 @@
 				var position = Math.floor(scaled_value / (1 / this.options.steps ));
 				if(position == this.options.steps){ position--; }
 
-				h = (this.possible_hues[position] + this.options.offset) % 360;
+				for( j=0; j<this.options.mapDataTo.length; j++) {
+					
+					switch(this.options.mapDataTo[j]){
+						case('h'):
+							h = (this.possible_hues[position] + this.options.offset) % 360;
+							break;
+						case('s'):
+							s = (this.possible_sats[position] + this.options.offset) % 100;
+							break;
+						case('l'):
+							l = (this.possible_lights[position] + this.options.offset) % 100;
+							break;
+						case('a'):
+							a = (this.possible_alphas[position] + this.options.offset);
+							break;
+					}
+				}
+				
 			}
 
 			// RBG and Grayscale

@@ -10,9 +10,10 @@
 
     <!-- Le styles -->
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <link href="prettify.css" type="text/css" rel="stylesheet">
     <style>
       body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        padding-top: 30px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
 
@@ -57,12 +58,26 @@
         padding:10px;
         box-sizing:border-box;
       }
+      #intro {
+        box-shadow: inset 0 0 40px 0 rgba(0,0,0,0.6);
+        color: #FFF;
+        border-radius:15px;
+        -webkit-border-radius:15px;
+
+        transition: background 1s;
+      }
+      pre.prettyprint {
+        padding: 10px;
+        border: none;
+        box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.1);
+      }
     </style>
+    
   </head>
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+   <!--  <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -74,16 +89,14 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Demos</a></li>
-              <!-- <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li> -->
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container">
-      <div class="hero-unit">
+      <div id="intro" class="hero-unit">
         <h1>HeatChart.js</h1>
         <p>Makes Data Beautiful</p>
       </div>
@@ -92,7 +105,7 @@
         <div class="span12">
           <h3>RBG Compatible</h3>
           <p>HeatChart uses HSL colorspace by default, but if you're stuck with IE8 or lower, you can specify the use of RGB colorspace (at a slight performance cost).</p>
-          <pre>$('#table0').heatChart({theta: 90, colorModel: 'rgb'});</pre>
+          <pre class="prettyprint">$('#table0').heatChart({theta: 90, colorModel: 'rgb'});</pre>
           <h4>Pretty (HSL)</h4>
           <table id="table0">
             <tr>
@@ -226,7 +239,7 @@
         <div class="span12">
           <h3>Discrete Color Steps</h3>
           <p>If you don't want a full gradient, you can pass your desired number of color steps. Also compatible with grayscale colorspace.</p>
-          <pre>$('#table1').heatChart({theta: 90, discrete: true, steps: 3});</pre>
+          <pre class="prettyprint">$('#table1').heatChart({theta: 90, discrete: true, steps: 3});</pre>
           <table id="table1">
             <tr>
               <td>0</td>
@@ -306,7 +319,7 @@
         <div class="span12">
           <h3>Choose Your Scale</h3>
           <p>Default is linear, but if you're feeling fancy, why not go logarithmic?</p>
-          <pre>$('#table1point5, #table1point6').heatChart({theta: 90, scale: 'log'});</pre>
+          <pre class="prettyprint">$('#table1point5, #table1point6').heatChart({theta: 90, scale: 'log'});</pre>
           <table id="table1point5">
             <tr>
               <td>0</td>
@@ -455,7 +468,7 @@
         <div class="span12">
           <h3>Color What You Want</h3>
           <p>If you don't want to apply the coloring to element backrounds, pass your desired alternative CSS attribute.</p>
-                  <pre>$('#table2').heatChart({theta: 90, attributeToColor: 'color'});</pre>
+                  <pre class="prettyprint">$('#table2').heatChart({theta: 90, attributeToColor: 'color'});</pre>
                   <table id="table2">
                     <tr>
                       <td>0</td>
@@ -535,7 +548,7 @@
                 <div class="span12">
                   <h3>Size of the Spectrum</h3>
                   <p>Choose the spectrum width by specifying how many degrees around the color wheel you would like to travel.</p>
-                  <pre>$('#table3').heatChart({theta: 180});</pre>
+                  <pre class="prettyprint">$('#table3').heatChart({theta: 180});</pre>
                   <table id="table3">
                     <tr>
                       <td>0</td>
@@ -615,7 +628,7 @@
                 <div class="span12">
                   <h3>Fast Forward</h3>
                   <p>If you would like to use a particular portion of the spectrum, define an offset (in degrees) for the start of your theta region.</p>
-                  <pre>$('#table4').heatChart({theta: 180, offset: 180});</pre>
+                  <pre class="prettyprint">$('#table4').heatChart({theta: 180, offset: 180});</pre>
                   <table id="table4">
                     <tr>
                       <td>0</td>
@@ -695,7 +708,7 @@
                 <div class="span12">
                   <h3>Reverse! Reverse!</h3>
                   <p>Optionally travel around the color spectrum in reverse.</p>
-                  <pre>$('#table5').heatChart({theta: 180, offset: 180, reverse: true});</pre>
+                  <pre class="prettyprint">$('#table5').heatChart({theta: 180, offset: 180, reverse: true});</pre>
                   <table id="table5">
                     <tr>
                       <td>0</td>
@@ -775,7 +788,7 @@
                 <div class="span12">
                   <h3>Please don't make me use tables...</h3>
                   <p>Use whatever you want. Simply specify which type of HTML tag should be parsed for numerical values.</p>
-                  <pre>$('#div1').heatChart({theta: 360, elementSelector: 'div'});</pre>
+                  <pre class="prettyprint">$('#div1').heatChart({theta: 360, elementSelector: 'div'});</pre>
                   <div id="div1" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -793,7 +806,7 @@
                 <div class="span12">
                   <h3>Going Grey (or Gray)</h3>
                   <p>Hate color? Go grayscale.</p>
-                  <pre>$('#div2').heatChart({colorModel: 'grayscale', elementSelector: 'div'});</pre>
+                  <pre class="prettyprint">$('#div2').heatChart({colorModel: 'grayscale', elementSelector: 'div'});</pre>
                   <div id="div2" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -810,7 +823,7 @@
                 </div>
 
                 <div class="span12">
-                  <pre>$('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, elementSelector: 'div'});</pre>
+                  <pre class="prettyprint">$('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, elementSelector: 'div'});</pre>
                   <div id="div3" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -827,7 +840,7 @@
                 </div>
 
                 <div class="span12">
-                  <pre>$('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, elementSelector: 'div'});</pre>
+                  <pre class="prettyprint">$('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, elementSelector: 'div'});</pre>
                   <div id="div4" class="demo-div clearfix">
                     <div>0</div>
                     <div>1</div>
@@ -846,7 +859,7 @@
                 <div class="span12">
                   <h3>Smart Parsing</h3>
                   <p>We're totally cool with floats. Furthermore, values in your elements needn't even need to be entirely numeric. We'll do our best to pull out the right numbers.</p>
-                  <pre>$('#div5').heatChart({theta: 220, elementSelector: 'a', attributeToColor: 'color'});</pre>
+                  <pre class="prettyprint">$('#div5').heatChart({theta: 220, elementSelector: 'a', attributeToColor: 'color'});</pre>
                   <div id="div5" class="demo-div clearfix">
                     <p><a href="#" title="1 Widget">1 Widget</a> | <a href="#" title="2 Widgets">2 Widgets</a> | <a href="#" title="3 Widgets">3 Widgets</a> | <a href="#" title="4 Widgets">4 Widgets</a> | <a href="#" title="5 Widgets">5 Widgets</a> | <a href="#" title="6 Widgets">6 Widgets</a> | <a href="#" title="7 Widgets">7 Widgets</a> | <a href="#" title="8 Widgets">8 Widgets</a> | <a href="#" title="9 Widgets">9 Widgets</a> | <a href="#" title="10 Widgets">10 Widgets</a></p>
                   </div>
@@ -854,7 +867,7 @@
                 </div>
 
                 <div class="span12">
-                  <pre>$('#table6').heatChart({theta: 180, reverse: true});</pre>
+                  <pre class="prettyprint">$('#table6').heatChart({theta: 180, reverse: true});</pre>
                   <table id="table6">
                     <tbody><tr>
                       <th></th>
@@ -1078,7 +1091,7 @@
                 <div class="span12">
                   <h3>Customize Lightness and Saturation (and Apha Too)</h3>
                   <p>HeatChart assigns hues to data in HSL colorspace. The S and the L (and the alpha) are up to you. No alpha for you if you are using RGB colorspace. RGB should only be used for compatibility with the browsers that shall not be named.</p>
-                  <pre>$('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90, lightness:40});</pre>
+                  <pre class="prettyprint">$('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90, lightness:40});</pre>
                   <table id="table7" class="pattern-background">
                     <tbody><tr>
                       <th></th>
@@ -1304,6 +1317,7 @@
     </div> <!-- /container -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
   <script src="./heatChart.js"></script>
+  <script src="./prettify.js"></script>
   <script type="text/javascript">
   function nasty_rgb_gradient( el ) {
     var r, g, b, val;
@@ -1320,19 +1334,33 @@
     });
 
     $('#table0').heatChart({portion: 0.25, reverse: true, mapDataTo: ['h']});
-    $('#table1').heatChart({theta: 90, discrete: true, steps: 3});
-    $('#table1point5, #table1point6').heatChart({theta: 90, scale: 'log'});
-    $('#table2').heatChart({theta: 90, attributeToColor: 'color'});
-    $('#table3').heatChart({theta: 180});
-    $('#table4').heatChart({theta: 180, offset: 180});
-    $('#table5').heatChart({theta: 180, offset: 180, reverse: true});
-    $('#div1').heatChart({theta: 360, elementSelector: 'div'});
+    $('#table1').heatChart({portion: 0.25, discrete: true, steps: 3, mapDataTo: ['l','h']});
+    $('#table1point5, #table1point6').heatChart({portion: 0.25, scale: 'log'});
+    $('#table2').heatChart({portion: 0.25, attributeToColor: 'color'});
+    $('#table3').heatChart({portion: 0.5});
+    $('#table4').heatChart({portion: 0.5, offset: 180});
+    $('#table5').heatChart({portion: 0.5, offset: 180, reverse: true});
+    $('#div1').heatChart({portion: 1, elementSelector: 'div'});
     $('#div2').heatChart({colorModel: 'grayscale', elementSelector: 'div'});
     $('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, elementSelector: 'div'});
     $('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, elementSelector: 'div'});
     $('#div5').heatChart({theta: 220, elementSelector: 'a', attributeToColor: 'color'});
-    $('#table6').heatChart({theta: 180, reverse: true, min_val: 0.4, max_val: 2, mapDataTo: 's'});
-    $('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90, lightness: 40});
+    $('#table6').heatChart({portion: 0.5, reverse: true});
+    $('#table7').heatChart({portion: 0.5, reverse: true, alpha:0.5, saturation:90, lightness: 40});
+
+    prettyPrint();
+
+    var color_index = 0;
+    var int=self.setInterval(function(){color_change()},50);
+
+    function color_change(){
+        color_val = ((color_index * 360) + 200) % 360;
+        $('.hero-unit').css('background', 'hsl(' + color_val + ', 60%, 50%)');
+        $('pre').css('background', 'hsl(' + color_val + ', 20%, 90%)');
+
+        color_index += 0.001;
+        if( color_index > 1 ){ color_index = 0; }
+    }
   });
   </script>
   </body>
