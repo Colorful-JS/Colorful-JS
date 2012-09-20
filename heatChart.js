@@ -7,6 +7,7 @@
 			elementSelector: "td",
 			preventionSelector: null,
 			attributeToColor: "background",
+			dataAttribute: 'html',
 			
 			hue: 0,
 			theta: 220,
@@ -31,8 +32,15 @@
 			
 		};
 	var methods = {
-		get_number_from_html : function( jq_obj ) {
-			return parseFloat($(jq_obj).html());
+		get_number_from_element : function( jq_obj, dataAttribute ) {
+			switch(dataAttribute) {
+				case 'html':
+					return parseFloat($(jq_obj).html());
+					break;
+				default:
+					return parseFloat($(jq_obj).attr(dataAttribute));
+					break;
+			}
 		},
 		scale_feature : function( scale, unscaled_value, global_min, global_max ) {
 			var scaled_value = null;
@@ -134,7 +142,8 @@
 
 		// Build our data array, and set our min and max properly
 		for ( i=0; i<this.children.length; i++ ){
-			var value = this.methods.get_number_from_html(this.children[i]);
+			var value = this.methods.get_number_from_element(this.children[i], this.options.dataAttribute);
+			
 			if( !isNaN(value) && (this.options.min_val == null || value > this.options.min_val) && (this.options.max_val == null || value < this.options.max_val) ){
 				this.values.push({element: this.children[i], value: value, scaled_val: null});
 				if( value > this.max ) { this.max = value; }
@@ -144,7 +153,7 @@
 
 		// Iterate through our elements and make the magic happen
 		for ( i=0; i<this.values.length; i++ ){
-			var unscaled_val, element, scaled_value, color;
+			var unscaled_val, element, scaled_value, color, h, s, l, a;
 
 			unscaled_value = this.values[i].value;
 			element = this.values[i].element;
@@ -158,9 +167,10 @@
 			//Currently no need for this
 			//this.values[i].scaled_val = scaled_val;
 
-			var h = ((scaled_value * this.options.theta) + this.options.offset) % 360;
-			var s = (this.options.colorModel == "grayscale") ? 0 : this.options.saturation;
-			var l = this.options.lightness;
+			h = ((scaled_value * this.options.theta) + this.options.offset) % 360;
+			s = (this.options.colorModel == "grayscale") ? 0 : this.options.saturation;
+			l = this.options.lightness;
+			a = this.options.alpha;
 
 			if(this.options.discrete && this.options.colorModel != 'grayscale'){
 				var position = Math.floor(scaled_value / (1 / this.options.steps ));
@@ -179,7 +189,6 @@
 					} else {
 						shade = this.methods.get_shade( scaled_value, 255 );
 					}
-
 					rgb = [shade,shade,shade];
 				} else {
 					rgb = this.methods.hslToRgb(h,s,l);
@@ -188,7 +197,7 @@
 			
 			// HSLA
 			} else if(this.options.colorModel == 'hsla'){
-				color = 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')';
+				color = 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + a + ')';
 			}
 
 			$(element).addClass( this.options.addedClass ).css( this.options.attributeToColor, color );

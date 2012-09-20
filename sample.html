@@ -95,16 +95,16 @@
           <pre>$('#table0').heatChart({theta: 90, colorModel: 'rgb'});</pre>
           <table id="table0">
             <tr>
-              <td>0</td>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
+              <td data-number="9">0</td>
+              <td data-number="8">1</td>
+              <td data-number="7">2</td>
+              <td data-number="6">3</td>
+              <td data-number="5">4</td>
+              <td data-number="4">5</td>
+              <td data-number="3">6</td>
+              <td data-number="2">7</td>
+              <td data-number="1">8</td>
+              <td data-number="0">9</td>
             </tr>
             <tr>
               <td>10</td>
@@ -1252,7 +1252,7 @@
   <script src="./heatChart.js"></script>
   <script type="text/javascript">
   $(function(){
-    $('#table0').heatChart({theta: 90, colorModel: 'rgb'});
+    $('#table0').heatChart({theta: 90, colorModel: 'rgb', dataAttribute: 'data-number'});
     $('#table1').heatChart({theta: 90, discrete: true, steps: 3});
     $('#table1point5, #table1point6').heatChart({theta: 90, scale: 'log'});
     $('#table2').heatChart({theta: 90, attributeToColor: 'color'});
