@@ -93,6 +93,7 @@
           <h3>RBG Compatible</h3>
           <p>HeatChart uses HSL colorspace by default, but if you're stuck with IE8 or lower, you can specify the use of RGB colorspace (at a slight performance cost).</p>
           <pre>$('#table0').heatChart({theta: 90, colorModel: 'rgb'});</pre>
+          <h4>Pretty (HSL)</h4>
           <table id="table0">
             <tr>
               <td data-number="9">0</td>
@@ -154,17 +155,70 @@
               <td>48</td>
               <td>49</td>
             </tr>
+          </table>
+
+          <br/>
+          <h4>Pretty Ugly (RGB)</h4>
+          <table id="rgb-sample">
             <tr>
-              <td>50</td>
-              <td>51</td>
-              <td>52</td>
-              <td>53</td>
-              <td>54</td>
-              <td>55</td>
-              <td>56</td>
-              <td>57</td>
-              <td>58</td>
-              <td>59</td>
+              <td data-value="0">0</td>
+              <td data-value="0.02">1</td>
+              <td data-value="0.04">2</td>
+              <td data-value="0.06">3</td>
+              <td data-value="0.08">4</td>
+              <td data-value="0.1">5</td>
+              <td data-value="0.12">6</td>
+              <td data-value="0.14">7</td>
+              <td data-value="0.16">8</td>
+              <td data-value="0.18">9</td>
+            </tr>
+            <tr>
+              <td data-value="0.2">10</td>
+              <td data-value="0.22">11</td>
+              <td data-value="0.24">12</td>
+              <td data-value="0.26">13</td>
+              <td data-value="0.28">14</td>
+              <td data-value="0.3">15</td>
+              <td data-value="0.32">16</td>
+              <td data-value="0.34">17</td>
+              <td data-value="0.36">18</td>
+              <td data-value="0.38">19</td>
+            </tr>
+            <tr>
+              <td data-value="0.4">20</td>
+              <td data-value="0.42">21</td>
+              <td data-value="0.44">22</td>
+              <td data-value="0.46">23</td>
+              <td data-value="0.48">24</td>
+              <td data-value="0.5">25</td>
+              <td data-value="0.52">26</td>
+              <td data-value="0.54">27</td>
+              <td data-value="0.56">28</td>
+              <td data-value="0.58">29</td>
+            </tr>
+            <tr>
+              <td data-value="0.6">30</td>
+              <td data-value="0.62">31</td>
+              <td data-value="0.64">32</td>
+              <td data-value="0.66">33</td>
+              <td data-value="0.68">34</td>
+              <td data-value="0.7">35</td>
+              <td data-value="0.72">36</td>
+              <td data-value="0.74">37</td>
+              <td data-value="0.76">38</td>
+              <td data-value="0.78">39</td>
+            </tr>
+            <tr>
+              <td data-value="0.8">40</td>
+              <td data-value="0.82">41</td>
+              <td data-value="0.84">42</td>
+              <td data-value="0.86">43</td>
+              <td data-value="0.88">44</td>
+              <td data-value="0.9">45</td>
+              <td data-value="0.92">46</td>
+              <td data-value="0.94">47</td>
+              <td data-value="0.96">48</td>
+              <td data-value="0.98">49</td>
             </tr>
           </table>
           <hr/>
@@ -1251,8 +1305,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
   <script src="./heatChart.js"></script>
   <script type="text/javascript">
+  function nasty_rgb_gradient( el ) {
+    var r, g, b, val;
+    val = $(el).attr('data-value');
+    console.log(val);
+    r = Math.round(255 * val);
+    g = Math.round(255 * (1 - val));
+    $(el).css('background', 'rgb(' + r + ', ' + g + ',0)');
+  }
+
   $(function(){
-    $('#table0').heatChart({portion: 1, reverse: true, mapDataTo: ['a'], lightness: 50});
+    $('#rgb-sample').find('td').each(function(){
+      window.nasty_rgb_gradient($(this));
+    });
+
+    $('#table0').heatChart({portion: 0.25, reverse: true, mapDataTo: ['h']});
     $('#table1').heatChart({theta: 90, discrete: true, steps: 3});
     $('#table1point5, #table1point6').heatChart({theta: 90, scale: 'log'});
     $('#table2').heatChart({theta: 90, attributeToColor: 'color'});
