@@ -48,6 +48,16 @@
 					break;
 			}
 		},
+		get_stepwise_value: function( scaled_value, step_count ) {
+			var increments, steps;
+			increments = 1 / step_count;
+			steps =  Math.floor(scaled_value / increments);
+			if(steps == step_count){ steps--; }
+			return increments * steps;
+		},
+		get_shade : function ( scaled_value, spectrum_width ) {
+			return Math.round(scaled_value * spectrum_width);
+		},
 		hslToRgb: function(h,s,l){
 		    var r, g, b;
 		    h /= 360;
@@ -159,27 +169,25 @@
 				h = (this.possible_hues[position] + this.options.offset) % 360;
 			}
 
+			// RBG and Grayscale
 			if(this.options.colorModel == 'rgb' || this.options.colorModel == 'grayscale'){
+				var rgb;
 				if(this.options.colorModel == 'grayscale'){
+					var shade;
 					if(this.options.discrete){
-						var increments = 1 / this.options.steps;
-						var steps =  Math.floor(scaled_value / increments);
-						if(steps == this.options.steps){ steps--; }
-						var stepped_value = increments * steps;
-						var shade = Math.round(stepped_value * 255);
+						shade = this.methods.get_shade( this.methods.get_stepwise_value( scaled_value, this.options.steps ), 255 );
 					} else {
-						var shade = Math.round(scaled_val * 255);
+						shade = this.methods.get_shade( scaled_value, 255 );
 					}
-					var rgb = [shade,shade,shade];
+
+					rgb = [shade,shade,shade];
 				} else {
-					var rgb = this.methods.hslToRgb(h,s,l);
+					rgb = this.methods.hslToRgb(h,s,l);
 				}
-				//$(element).css( this.options.attributeToColor, 'rgb(' + Math.round(rgb[0]) + ', ' + Math.round(rgb[1]) + ', ' + Math.round(rgb[2]) + ')');
 				color = 'rgb(' + Math.round(rgb[0]) + ', ' + Math.round(rgb[1]) + ', ' + Math.round(rgb[2]) + ')';
 			
+			// HSLA
 			} else if(this.options.colorModel == 'hsla'){
-				// hsl and hsla have the same browser support, so just use hsla
-				//$(element).css( this.options.attributeToColor, 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')');
 				color = 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')';
 			}
 
