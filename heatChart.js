@@ -14,7 +14,10 @@
 			discrete: false,
 			steps: 10,
 			colorModel: 'hsla',
-			scale: 'linear'
+			scale: 'linear',
+			min_val: null,
+			max_val: null,
+			added_class: 'heat-chart-el'
 		};
 	var methods = {
 		get_number_from_html : function( jq_obj ) {
@@ -81,7 +84,7 @@
 
 		for ( i=0; i<this.children.length; i++ ){
 			var value = this.methods.get_number_from_html(this.children[i]);
-			if( !isNaN(value) ){
+			if( !isNaN(value) && (this.options.min_val == null || value > this.options.min_val) && (this.options.max_val == null || value < this.options.max_val) ){
 				this.values.push({element: this.children[i], value: value, scaled_val: null});
 				if( value > this.max ) { this.max = value; }
 				if( value < this.min ) { this.min = value; }
@@ -139,6 +142,7 @@
 				// hsl and hsla have the same browser support, so just use hsla
 				$(element).css( this.options.applyTo, 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + this.options.alpha + ')');
 			}
+			$(element).addClass(this.options.added_class);
 		}
 	};
 
