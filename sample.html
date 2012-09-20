@@ -83,6 +83,25 @@
         height:7px;
         width:7px;
       }
+
+      #bball .column {
+        float:left;
+      }
+
+      #bball .heading, #bball .datum {
+        height:15px;
+        display:block;
+        padding:12px 20px;
+      }
+      #bball .datum {
+        text-align: center;
+        background: #555;
+      }
+      #bball div.colorful-el {
+        color: #fff;
+        font-weight:bold;
+      }
+
     </style>
     
   </head>
@@ -2170,6 +2189,140 @@
                       <td data-val="0"> </td>
                     </tr>
                   </table>
+                  <hr/>
+                </div>
+                <div class="span12">
+                  <h3>College Basketball in the 21st Century</h3>
+                  <h4>Final AP Poll Rankings by Year</h4>
+                  <div id="bball" class="clearfix">
+                    <div class="column">
+                      <div class="heading"></div>
+                      <div class="heading">Duke</div>
+                      <div class="heading">Kansas</div>
+                      <div class="heading">Kentucky</div>
+                      <div class="heading">UCLA</div>
+                      <div class="heading">UNC</div>
+                      <div class="heading">Mich State</div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2000</div>
+                      <div class="datum">1</div>
+                      <div class="datum"> </div>
+                      <div class="datum">19</div>
+                      <div class="datum"> </div>
+                      <div class="datum"> </div>
+                      <div class="datum">2</div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2001</div>
+                      <div class="datum">1</div>
+                      <div class="datum">12</div>
+                      <div class="datum">9</div>
+                      <div class="datum">15</div>
+                      <div class="datum">6</div>
+                      <div class="datum">3</div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2002</div>
+                      <div class="datum">1</div>
+                      <div class="datum">2</div>
+                      <div class="datum">16</div>
+                      <div class="datum"> </div>
+                      <div class="datum"> </div>
+                      <div class="datum"> </div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2003</div>
+                      <div class="datum">7</div>
+                      <div class="datum">6</div>
+                      <div class="datum">1</div>
+                      <div class="datum"> </div>
+                      <div class="datum"> </div>
+                      <div class="datum"> </div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2004</div>
+                      <div class="datum">6</div>
+                      <div class="datum">16</div>
+                      <div class="datum">2</div>
+                      <div class="datum"> </div>
+                      <div class="datum">18</div>
+                      <div class="datum"> </div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2005</div>
+                      <div class="datum">3</div>
+                      <div class="datum">12</div>
+                      <div class="datum">7</div>
+                      <div class="datum"> </div>
+                      <div class="datum">2</div>
+                      <div class="datum">15</div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2006</div>
+                      <div class="datum">1</div>
+                      <div class="datum">12</div>
+                      <div class="datum"> </div>
+                      <div class="datum">7</div>
+                      <div class="datum">10</div>
+                      <div class="datum"> </div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2007</div>
+                      <div class="datum"> </div>
+                      <div class="datum">2</div>
+                      <div class="datum"> </div>
+                      <div class="datum">7</div>
+                      <div class="datum">4</div>
+                      <div class="datum"> </div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2008</div>
+                      <div class="datum">9</div>
+                      <div class="datum">4</div>
+                      <div class="datum"> </div>
+                      <div class="datum">3</div>
+                      <div class="datum">1</div>
+                      <div class="datum">18</div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2009</div>
+                      <div class="datum">6</div>
+                      <div class="datum">14</div>
+                      <div class="datum"> </div>
+                      <div class="datum">18</div>
+                      <div class="datum">2</div>
+                      <div class="datum">8</div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2010</div>
+                      <div class="datum">3</div>
+                      <div class="datum">1</div>
+                      <div class="datum">2</div>
+                      <div class="datum"> </div>
+                      <div class="datum"> </div>
+                      <div class="datum">13</div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2011</div>
+                      <div class="datum">3</div>
+                      <div class="datum">2</div>
+                      <div class="datum">11</div>
+                      <div class="datum"> </div>
+                      <div class="datum">7</div>
+                      <div class="datum"> </div>
+                    </div>
+                    <div class="column">
+                      <div class="heading">2012</div>
+                      <div class="datum">8</div>
+                      <div class="datum">6</div>
+                      <div class="datum">1</div>
+                      <div class="datum"> </div>
+                      <div class="datum">4</div>
+                      <div class="datum">5</div>
+                    </div>
+                  </div>
+                  <hr/>
                 </div>
 
       </div>
@@ -2207,6 +2360,7 @@
     $('#table6').colorful({portion: 0.5, reverse: true});
     $('#table7').colorful({portion: 0.5, reverse: true, alpha:0.5, saturation:90, lightness: 40});
     $('#mri').colorful({portion: 0.25, reverse: true, alpha:0.5, saturation:100, dataAttribute: 'data-val'});
+    $('#bball').colorful({portion: 0.25, reverse: true, elementSelector: 'div.datum'});
 
     prettyPrint();
 
