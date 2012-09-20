@@ -1252,7 +1252,7 @@
   <script src="./heatChart.js"></script>
   <script type="text/javascript">
   $(function(){
-    $('#table0').heatChart({theta: 90, colorModel: 'rgb', dataAttribute: 'data-number'});
+    $('#table0').heatChart({portion: 0.5, reverse: true, mapDataTo: ['l','s', 'h', 'a'], lightness: 50});
     $('#table1').heatChart({theta: 90, discrete: true, steps: 3});
     $('#table1point5, #table1point6').heatChart({theta: 90, scale: 'log'});
     $('#table2').heatChart({theta: 90, attributeToColor: 'color'});
@@ -1264,7 +1264,7 @@
     $('#div3').heatChart({colorModel: 'grayscale', discrete: true, steps:3, elementSelector: 'div'});
     $('#div4').heatChart({colorModel: 'grayscale', discrete: true, steps:5, elementSelector: 'div'});
     $('#div5').heatChart({theta: 220, elementSelector: 'a', attributeToColor: 'color'});
-    $('#table6').heatChart({theta: 180, reverse: true});
+    $('#table6').heatChart({theta: 180, reverse: true, min_val: 0.4, max_val: 2});
     $('#table7').heatChart({theta: 180, reverse: true, alpha:0.5, saturation:90, lightness: 40});
   });
   </script>

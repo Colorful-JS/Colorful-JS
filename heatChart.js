@@ -2,7 +2,7 @@
 
 	var pluginName = 'heatChart',
 		defaults = {
-			mapDataTo: "hue",
+			mapDataTo: ["h"],
 
 			elementSelector: "td",
 			preventionSelector: null,
@@ -11,6 +11,7 @@
 			
 			hue: 0,
 			theta: 220,
+			portion: 0.25,
 			offset: 0,
 			colorModel: "hsla",
 			colors: null,
@@ -166,11 +167,29 @@
 
 			//Currently no need for this
 			//this.values[i].scaled_val = scaled_val;
-
-			h = ((scaled_value * this.options.theta) + this.options.offset) % 360;
+			h = this.options.hue;
 			s = (this.options.colorModel == "grayscale") ? 0 : this.options.saturation;
 			l = this.options.lightness;
 			a = this.options.alpha;
+
+			for( j=0; j<this.options.mapDataTo.length; j++) {
+				
+				switch(this.options.mapDataTo[j]){
+					case('h'):
+						h = ((scaled_value * this.options.portion * 360) + this.options.offset) % 360;
+						break;
+					case('s'):
+						s = ((scaled_value * this.options.portion * 100) + this.options.offset) % 100;
+						break;
+					case('l'):
+						l = ((scaled_value * this.options.portion * 100) + this.options.offset) % 100;
+						break;
+					case('a'):
+						a = ((scaled_value * this.options.portion) + this.options.offset) % 1;
+						break;
+				}
+			}
+			
 
 			if(this.options.discrete && this.options.colorModel != 'grayscale'){
 				var position = Math.floor(scaled_value / (1 / this.options.steps ));
