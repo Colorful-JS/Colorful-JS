@@ -22,14 +22,14 @@
 
 			reverse: false,
 
-			discrete: false,
+			stepwise: false,
 			steps: 10,
 
 			scale: "linear",
 			min_val: null,
 			max_val: null,
 
-			addedClass: "colorful-el"
+			addedClass: "js-colorful"
 			
 		};
 	var methods = {
@@ -116,12 +116,12 @@
 
 		// If the user has passed an array of colors to use
 		if(this.options.colors){
-			this.options.discrete = true;
+			this.options.stepwise = true;
 			this.options.steps = this.options.colors.length;
 		}
 
 		// Build our possible hues array if we're going with a discrete number of colors
-		if(this.options.discrete && this.options.colorModel != 'grayscale'){
+		if(this.options.stepwise && this.options.colorModel != 'grayscale'){
 
 			this.possible_hues = new Array();
 			this.possible_sats = new Array();
@@ -208,7 +208,7 @@
 			}
 			
 
-			if(this.options.discrete && this.options.colorModel != 'grayscale'){
+			if(this.options.stepwise && this.options.colorModel != 'grayscale'){
 				var position = Math.floor(scaled_value / (1 / this.options.steps ));
 				if(position == this.options.steps){ position--; }
 
@@ -237,7 +237,7 @@
 				var rgb;
 				if(this.options.colorModel == 'grayscale'){
 					var shade;
-					if(this.options.discrete){
+					if(this.options.stepwise){
 						shade = this.methods.get_shade( this.methods.get_stepwise_value( scaled_value, this.options.steps ), 255 );
 					} else {
 						shade = this.methods.get_shade( scaled_value, 255 );
