@@ -118,9 +118,58 @@
         text-align: center;
         margin-top: 10px;
       }
-      h2 a {
-        padding-top:50px;
+      h2 {
+        margin:20px 0;
       }
+      #table6 td, #min-max td {
+        border: 2px solid whiteSmoke;
+        border-radius:3px;
+        box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.15);
+        color:rgba(255,255,255,0.5);
+        /*text-indent:-10000px;*/
+      }
+      #min-max td {
+        border-color: #FFF;
+      }
+      .colorful {
+        font-family: 'Ubuntu', sans-serif;
+      }
+    /*  h2 > a.colorful:after {
+        content: "";
+        background:red;
+        width:100%;
+        height:20px;
+        position:relative;
+      }
+      */
+     h2 {
+      background: #fff;
+     }
+     h2[title]::before {
+      content: attr(title);
+      background: white;
+      z-index: 2;
+      position: absolute;
+      padding-right: 25px;
+    }
+    h2[title]::after {
+     content: "";
+     display: block;
+     position: relative;
+     top: -0.8em;
+/*     border-bottom: 1px solid #99B3D8;
+*/    }
+    ul.features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul.features li {
+      padding-bottom:35px;
+      margin-bottom:20px;
+      border-bottom: 1px solid #E3E3E3;
+    }
+
     </style>
     
   </head>
@@ -159,6 +208,7 @@
               <li><a href="#features">Features</a></li>
               <li><a href="#demos">Demos</a></li>
               <li><a href="#download">Download</a></li>
+              <li><a href="#supporters">Our Supporters</a></li>
             </ul>
           </div>
         </div>
@@ -166,7 +216,7 @@
 
       <div class="row" >
         <div class="span12">
-          <h2><a class="colorful" name="download" id="download">Download Colorful.js</a></h2>
+          <h2 title="Download Colorful.js" class="colorful" name="download" id="download">Download Colorful.js</h2>
           <ul>
             <li>Minified: <a href="#" title="Download Colorful.min.js">Colorful.min.js</a></li>
             <li>Unminified: <a href="#" title="Download Colorful.js">Colorful.js</a></li>
@@ -174,7 +224,7 @@
         </div>
 
         <div class="span12">
-          <h2><a class="colorful" name="demos" id="demos">Colorful.js Demos</a></h2>
+          <h2 title="Colorful.js Demos" class="colorful" name="demos" id="demos">Colorful.js Demos</h2>
           <div class="row">
             <div class="span12">
               <pre class="prettyprint">$('#college-bball').colorful({theta: 180, reverse: true});</pre>
@@ -570,8 +620,8 @@
         </div>
 
         <div class="span12">
-          <h2><a class="colorful" name="features" id="features">Features</a></h2>
-          <ul>
+          <h2 title="Features" class="colorful" name="features" id="features">Features</h2>
+          <ul class="features">
             <li>
               <h3>Map Data to Hue, Saturation, Lightness, and/or Alpha</h3>
               <p>Some text goes here.</p>
@@ -610,6 +660,149 @@
               <p><span class="label">Options</span> "linear", "log"</p>
               <p><span class="label label-info">Defaults</span> "linear"</p>
               <pre class="prettyprint">$('#some-element').colorful({scale:"log"});</pre>
+              <table id="table1point5">
+                <tr>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                  <td>8</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>11</td>
+                  <td>12</td>
+                  <td>13</td>
+                  <td>14</td>
+                  <td>15</td>
+                  <td>16</td>
+                  <td>17</td>
+                  <td>18</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td>21</td>
+                  <td>22</td>
+                  <td>23</td>
+                  <td>24</td>
+                  <td>25</td>
+                  <td>26</td>
+                  <td>27</td>
+                  <td>28</td>
+                  <td>29</td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                  <td>31</td>
+                  <td>32</td>
+                  <td>33</td>
+                  <td>34</td>
+                  <td>35</td>
+                  <td>36</td>
+                  <td>37</td>
+                  <td>38</td>
+                  <td>39</td>
+                </tr>
+                <tr>
+                  <td>40</td>
+                  <td>41</td>
+                  <td>42</td>
+                  <td>43</td>
+                  <td>44</td>
+                  <td>45</td>
+                  <td>46</td>
+                  <td>47</td>
+                  <td>48</td>
+                  <td>49</td>
+                </tr>
+                <tr>
+                  <td>50</td>
+                  <td>51</td>
+                  <td>52</td>
+                  <td>53</td>
+                  <td>54</td>
+                  <td>55</td>
+                  <td>56</td>
+                  <td>57</td>
+                  <td>58</td>
+                  <td>59</td>
+                </tr>
+              </table>
+              <br/>
+              <table id="table1point6">
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                  <td>8</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>20</td>
+                  <td>30</td>
+                  <td>40</td>
+                  <td>50</td>
+                  <td>60</td>
+                  <td>70</td>
+                  <td>80</td>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>100</td>
+                  <td>200</td>
+                  <td>300</td>
+                  <td>400</td>
+                  <td>500</td>
+                  <td>600</td>
+                  <td>700</td>
+                  <td>800</td>
+                  <td>900</td>
+                </tr>
+                <tr>
+                  <td>1000</td>
+                  <td>2000</td>
+                  <td>3000</td>
+                  <td>4000</td>
+                  <td>5000</td>
+                  <td>6000</td>
+                  <td>7000</td>
+                  <td>8000</td>
+                  <td>9000</td>
+                </tr>
+                <tr>
+                  <td>10000</td>
+                  <td>20000</td>
+                  <td>30000</td>
+                  <td>40000</td>
+                  <td>50000</td>
+                  <td>60000</td>
+                  <td>70000</td>
+                  <td>80000</td>
+                  <td>90000</td>
+                </tr>
+                <tr>
+                  <td>100000</td>
+                  <td>200000</td>
+                  <td>300000</td>
+                  <td>400000</td>
+                  <td>500000</td>
+                  <td>600000</td>
+                  <td>700000</td>
+                  <td>800000</td>
+                  <td>900000</td>
+                </tr>
+              </table>
             </li>
 
             <li>
@@ -618,6 +811,224 @@
               <p><span class="label">Options</span> Any numerical value.</p>
               <p><span class="label label-info">Defaults</span> There is no default min/max value.</p>
               <pre class="prettyprint">$('#some-element').colorful({min_val: 0.5, max_val: 2});</pre>
+              <table id="min-max">
+                <tbody><tr>
+                  <th></th>
+                  <th>0</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th>7</th>
+                  <th>8</th>
+                  <th>9</th>
+                  <th>10</th>
+                  <th>11</th>
+                  <th>12</th>
+                  <th>13</th>
+                  <th>14</th>
+                  <th>15</th>
+                  <th>16</th>
+                  <th>17</th>
+                  <th>18</th>
+                  <th>19</th>
+                  <th>20</th>
+                  <th>21</th>
+                  <th>22</th>
+                  <th>23</th>
+                </tr>
+                  <tr>
+                    <th>Sun</th>
+                    <td  title="0.38235294117647056 visits">0.38</td>
+                    <td  title="0.3088235294117647 visits">0.31</td>
+                    <td  title="0.38235294117647056 visits">0.38</td>
+                    <td  title="0.3382352941176471 visits">0.34</td>
+                    <td  title="0.27941176470588236 visits">0.28</td>
+                    <td  title="0.2647058823529412 visits">0.26</td>
+                    <td  title="0.27941176470588236 visits">0.28</td>
+                    <td  title="0.20588235294117646 visits">0.21</td>
+                    <td  title="0.25 visits">0.25</td>
+                    <td  title="0.4411764705882353 visits">0.44</td>
+                    <td  title="0.6029411764705882 visits">0.6</td>
+                    <td  title="0.5441176470588235 visits">0.54</td>
+                    <td  title="0.4852941176470588 visits">0.49</td>
+                    <td  title="0.4117647058823529 visits">0.41</td>
+                    <td  title="0.6323529411764706 visits">0.63</td>
+                    <td  title="0.6323529411764706 visits">0.63</td>
+                    <td  title="0.6617647058823529 visits">0.66</td>
+                    <td  title="0.45588235294117646 visits">0.46</td>
+                    <td  title="0.6029411764705882 visits">0.6</td>
+                    <td  title="0.6176470588235294 visits">0.62</td>
+                    <td  title="0.7058823529411765 visits">0.71</td>
+                    <td  title="0.6029411764705882 visits">0.6</td>
+                    <td  title="0.6323529411764706 visits">0.63</td>
+                    <td  title="0.45588235294117646 visits">0.46</td>
+                  </tr>
+                  <tr>
+                    <th>Mon</th>
+                    <td  title="0.5147058823529411 visits">0.51</td>
+                    <td  title="0.5 visits">0.5</td>
+                    <td  title="0.4117647058823529 visits">0.41</td>
+                    <td  title="0.27941176470588236 visits">0.28</td>
+                    <td  title="0.2647058823529412 visits">0.26</td>
+                    <td  title="0.45588235294117646 visits">0.46</td>
+                    <td  title="0.35294117647058826 visits">0.35</td>
+                    <td  title="0.47058823529411764 visits">0.47</td>
+                    <td  title="1.0 visits">1.0</td>
+                    <td  title="1.5441176470588236 visits">1.54</td>
+                    <td  title="2.1029411764705883 visits">2.1</td>
+                    <td  title="2.235294117647059 visits">2.24</td>
+                    <td  title="2.2058823529411766 visits">2.21</td>
+                    <td  title="2.3676470588235294 visits">2.37</td>
+                    <td  title="2.5294117647058822 visits">2.53</td>
+                    <td  title="2.3823529411764706 visits">2.38</td>
+                    <td  title="2.411764705882353 visits">2.41</td>
+                    <td  title="1.75 visits">1.75</td>
+                    <td  title="1.0588235294117647 visits">1.06</td>
+                    <td  title="0.7352941176470589 visits">0.74</td>
+                    <td  title="0.5294117647058824 visits">0.53</td>
+                    <td  title="1.088235294117647 visits">1.09</td>
+                    <td  title="0.6617647058823529 visits">0.66</td>
+                    <td  title="0.7352941176470589 visits">0.74</td>
+                  </tr>
+                  <tr>
+                    <th>Tues</th>
+                    <td  title="0.44776119402985076 visits">0.45</td>
+                    <td  title="0.4925373134328358 visits">0.49</td>
+                    <td  title="0.5223880597014925 visits">0.52</td>
+                    <td  title="0.3880597014925373 visits">0.39</td>
+                    <td  title="0.29850746268656714 visits">0.3</td>
+                    <td  title="0.5373134328358209 visits">0.54</td>
+                    <td  title="0.3283582089552239 visits">0.33</td>
+                    <td  title="0.417910447761194 visits">0.42</td>
+                    <td  title="1.328358208955224 visits">1.33</td>
+                    <td  title="1.7611940298507462 visits">1.76</td>
+                    <td  title="2.343283582089552 visits">2.34</td>
+                    <td  title="2.4925373134328357 visits">2.49</td>
+                    <td  title="2.298507462686567 visits">2.3</td>
+                    <td  title="2.388059701492537 visits">2.39</td>
+                    <td  title="2.5522388059701493 visits">2.55</td>
+                    <td  title="2.253731343283582 visits">2.25</td>
+                    <td  title="2.6417910447761193 visits">2.64</td>
+                    <td  title="1.6865671641791045 visits">1.69</td>
+                    <td  title="1.0 visits">1.0</td>
+                    <td  title="0.7761194029850746 visits">0.78</td>
+                    <td  title="0.7761194029850746 visits">0.78</td>
+                    <td  title="0.7164179104477612 visits">0.72</td>
+                    <td  title="0.6716417910447762 visits">0.67</td>
+                    <td  title="0.6865671641791045 visits">0.69</td>
+                  </tr>
+                  <tr>
+                    <th>Wed</th>
+                    <td  title="0.7058823529411765 visits">0.71</td>
+                    <td  title="0.4411764705882353 visits">0.44</td>
+                    <td  title="0.36764705882352944 visits">0.37</td>
+                    <td  title="0.39705882352941174 visits">0.4</td>
+                    <td  title="0.45588235294117646 visits">0.46</td>
+                    <td  title="0.35294117647058826 visits">0.35</td>
+                    <td  title="0.5294117647058824 visits">0.53</td>
+                    <td  title="0.5441176470588235 visits">0.54</td>
+                    <td  title="1.338235294117647 visits">1.34</td>
+                    <td  title="1.6470588235294117 visits">1.65</td>
+                    <td  title="2.6470588235294117 visits">2.65</td>
+                    <td  title="2.338235294117647 visits">2.34</td>
+                    <td  title="2.1911764705882355 visits">2.19</td>
+                    <td  title="1.9558823529411764 visits">1.96</td>
+                    <td  title="2.3529411764705883 visits">2.35</td>
+                    <td  title="2.3823529411764706 visits">2.38</td>
+                    <td  title="2.3823529411764706 visits">2.38</td>
+                    <td  title="1.911764705882353 visits">1.91</td>
+                    <td  title="0.9852941176470589 visits">0.99</td>
+                    <td  title="0.8970588235294118 visits">0.9</td>
+                    <td  title="0.8235294117647058 visits">0.82</td>
+                    <td  title="0.9411764705882353 visits">0.94</td>
+                    <td  title="0.9264705882352942 visits">0.93</td>
+                    <td  title="0.6617647058823529 visits">0.66</td>
+                  </tr>
+                  <tr>
+                    <th>Thur</th>
+                    <td  title="0.7058823529411765 visits">0.71</td>
+                    <td  title="0.6764705882352942 visits">0.68</td>
+                    <td  title="0.4264705882352941 visits">0.43</td>
+                    <td  title="0.29411764705882354 visits">0.29</td>
+                    <td  title="0.5 visits">0.5</td>
+                    <td  title="0.39705882352941174 visits">0.4</td>
+                    <td  title="0.39705882352941174 visits">0.4</td>
+                    <td  title="0.4852941176470588 visits">0.49</td>
+                    <td  title="1.2941176470588236 visits">1.29</td>
+                    <td  title="1.7058823529411764 visits">1.71</td>
+                    <td  title="2.5588235294117645 visits">2.56</td>
+                    <td  title="2.426470588235294 visits">2.43</td>
+                    <td  title="2.426470588235294 visits">2.43</td>
+                    <td  title="2.411764705882353 visits">2.41</td>
+                    <td  title="2.3970588235294117 visits">2.4</td>
+                    <td  title="2.6911764705882355 visits">2.69</td>
+                    <td  title="2.5294117647058822 visits">2.53</td>
+                    <td  title="1.661764705882353 visits">1.66</td>
+                    <td  title="1.0735294117647058 visits">1.07</td>
+                    <td  title="0.9264705882352942 visits">0.93</td>
+                    <td  title="0.8676470588235294 visits">0.87</td>
+                    <td  title="0.8382352941176471 visits">0.84</td>
+                    <td  title="0.6029411764705882 visits">0.6</td>
+                    <td  title="0.6176470588235294 visits">0.62</td>
+                  </tr>
+                  <tr>
+                    <th>Fri</th>
+                    <td  title="0.5588235294117647 visits">0.56</td>
+                    <td  title="0.5735294117647058 visits">0.57</td>
+                    <td  title="0.3382352941176471 visits">0.34</td>
+                    <td  title="0.39705882352941174 visits">0.4</td>
+                    <td  title="0.35294117647058826 visits">0.35</td>
+                    <td  title="0.29411764705882354 visits">0.29</td>
+                    <td  title="0.36764705882352944 visits">0.37</td>
+                    <td  title="0.39705882352941174 visits">0.4</td>
+                    <td  title="1.2941176470588236 visits">1.29</td>
+                    <td  title="1.7205882352941178 visits">1.72</td>
+                    <td  title="2.1470588235294117 visits">2.15</td>
+                    <td  title="2.073529411764706 visits">2.07</td>
+                    <td  title="1.9558823529411764 visits">1.96</td>
+                    <td  title="2.2205882352941178 visits">2.22</td>
+                    <td  title="2.264705882352941 visits">2.26</td>
+                    <td  title="2.161764705882353 visits">2.16</td>
+                    <td  title="1.8823529411764706 visits">1.88</td>
+                    <td  title="1.338235294117647 visits">1.34</td>
+                    <td  title="0.6176470588235294 visits">0.62</td>
+                    <td  title="0.4411764705882353 visits">0.44</td>
+                    <td  title="0.45588235294117646 visits">0.46</td>
+                    <td  title="0.47058823529411764 visits">0.47</td>
+                    <td  title="0.4264705882352941 visits">0.43</td>
+                    <td  title="0.38235294117647056 visits">0.38</td>
+                  </tr>
+                  <tr>
+                    <th>Sat</th>
+                    <td  title="0.38235294117647056 visits">0.38</td>
+                    <td  title="0.35294117647058826 visits">0.35</td>
+                    <td  title="0.35294117647058826 visits">0.35</td>
+                    <td  title="0.29411764705882354 visits">0.29</td>
+                    <td  title="0.07352941176470588 visits">0.07</td>
+                    <td  title="0.20588235294117646 visits">0.21</td>
+                    <td  title="0.2647058823529412 visits">0.26</td>
+                    <td  title="0.3235294117647059 visits">0.32</td>
+                    <td  title="0.4264705882352941 visits">0.43</td>
+                    <td  title="0.4117647058823529 visits">0.41</td>
+                    <td  title="0.5294117647058824 visits">0.53</td>
+                    <td  title="0.5 visits">0.5</td>
+                    <td  title="0.6323529411764706 visits">0.63</td>
+                    <td  title="0.47058823529411764 visits">0.47</td>
+                    <td  title="0.5735294117647058 visits">0.57</td>
+                    <td  title="0.7941176470588235 visits">0.79</td>
+                    <td  title="0.6176470588235294 visits">0.62</td>
+                    <td  title="0.4852941176470588 visits">0.49</td>
+                    <td  title="0.6029411764705882 visits">0.6</td>
+                    <td  title="0.45588235294117646 visits">0.46</td>
+                    <td  title="0.4117647058823529 visits">0.41</td>
+                    <td  title="0.36764705882352944 visits">0.37</td>
+                    <td  title="0.29411764705882354 visits">0.29</td>
+                    <td  title="0.5294117647058824 visits">0.53</td>
+                  </tr>
+              </tbody></table>
             </li>
 
             <li>
@@ -661,9 +1072,11 @@
             </li>
           </ul>
         </div>
+
         
+
         <div class="span12">
-          <h2><a class="colorful" name="about-colorful" id="about-colorful">About Colorful.js</a></h2>
+          <h2 title="About Colorful.js" class="colorful" name="about-colorful" id="about-colorful">About Colorful.js</a></h2>
           
           <h3>What is it?</h3>
           <p>Colorful is a data-visualization jQuery plugin. It assigns color values to each element of dataset based on the relationship between the elements. It's easy to use, a cinch to customize, and best of all, it makes your data beautiful.</p>
@@ -688,9 +1101,6 @@
           <h3>Where can I download it?</h3>
           <p>That's easy. <a href="#download" title="Go to the Download section.">Go grab it right here.</a></p>
           
-          <h3>Contributors</h3>
-          <p>Colorful.js was developed by <a href="http://twitter.com/lawsonkurtz" title="Find Lawson Kurtz on Twitter" target="_blank">@lawsonkurtz</a>, and is sponsored by <a href="http://thejakegroup.com/" title="The Jake Group" target="_blank">The Jake Group</a>.</p>
-          <p>Have a feature idea? <a href="https://github.com/ltk/Heat-Chart" title="Fork me on GitHub">Fork me on GitHub.</a></p>
         </div>
         <div class="span12">
           <h3>A Dose of Color Theory</h3>
@@ -1699,850 +2109,19 @@
                   <h3>Customize Lightness and Saturation (and Apha Too)</h3>
                   <p>colorful assigns hues to data in HSL colorspace. The S and the L (and the alpha) are up to you. No alpha for you if you are using RGB colorspace. RGB should only be used for compatibility with the browsers that shall not be named.</p>
                   <pre class="prettyprint">$('#mri').colorful({theta: 180, reverse: true, alpha:0.5, saturation:90, lightness:40});</pre>
-                  <table id="mri" class="mri">
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0.5"> </td>
-                      <td data-val="0.7"> </td>
-                      <td data-val="1"> </td>
-                      <td data-val="0.7"> </td>
-                      <td data-val="0.5"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                    <tr>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                      <td data-val="0"> </td>
-                    </tr>
-                  </table>
-                  <hr/>
+                  
                 </div>
-                
+                <div class="span12">
+                  <h2 title="Supporters" class="colorful" name="supporters" id="supporters">Supporters</h2>
+                  <h3>Contributors</h3>
+                  <p>Colorful.js was developed by <a href="http://twitter.com/lawsonkurtz" title="Find Lawson Kurtz on Twitter" target="_blank">@lawsonkurtz</a>. Have a feature suggestion? <a href="https://github.com/ltk/Heat-Chart" title="Fork me on GitHub">Fork me on GitHub.</a></p>
+
+                  <h3>Supported by The Jake Group</h3>
+                  <p><a href="http://www.thejakegroup.com/" title="The Jake Group" target="_blank">The Jake Group</a> is proud to support several open source initiatives, including Colorful.js. If require assistance with your web project, or think you have what it takes to to work at Jake, <a href="http://www.thejakegroup.com/contact/contact/" title="The Jake Group" target="_blank">get in touch</a>.</p>
+                </div>
 
       </div>
+      
     </div> <!-- /container -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
@@ -2577,9 +2156,10 @@
     $('#div4').colorful({colorModel: 'grayscale', discrete: true, steps:5, elementSelector: 'div'});
     $('#div5').colorful({theta: 220, elementSelector: 'a', attributeToColor: 'color'});
     $('#table6').colorful({portion: 0.5, reverse: true});
+    $('#min-max').colorful({portion: 0.5, reverse: true, min_val: 0.5, max_val: 2});
     $('#table7').colorful({portion: 0.5, reverse: true, alpha:0.5, saturation:90, lightness: 40});
     $('#mri').colorful({portion: 0.25, reverse: true, alpha:0.5, saturation:100, dataAttribute: 'data-val'});
-    $('#bball').colorful({portion: 0.25, reverse: true, saturation: 91, elementSelector: 'div.datum'});
+    $('#bball').colorful({portion: 0.25, reverse: true, saturation: 85, lightness: 50, elementSelector: 'div.datum'});
 
     prettyPrint();
 
@@ -2589,8 +2169,9 @@
     function color_change(){
         color_val = ((color_index * 360) + 200) % 360;
         $('.hero-unit').css('background', 'hsl(' + color_val + ', 60%, 50%)');
-        $('pre').css('background', 'hsla(' + color_val + ', 100%, 50%, 0.1)');
-        $('.colorful').css('color', 'hsl(' + color_val + ', 60%, 50%)');
+        $('pre').css('background', 'hsla(' + color_val + ', 100%, 50%, 0.03)');
+        $('h2.colorful').css({'color' : 'hsl(' + color_val + ', 60%, 50%)', 'background' : 'hsl(' + color_val + ', 60%, 50%)'});
+        $('a.colorful').css({'color' : 'hsl(' + color_val + ', 60%, 50%)'});
 
         color_index += 0.001;
         if( color_index > 1 ){ color_index = 0; }
