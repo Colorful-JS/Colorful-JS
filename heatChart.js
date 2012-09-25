@@ -196,13 +196,16 @@
 						h = ((scaled_value * this.options.portion * 360) + (this.options.offset * 360)) % 360;
 						break;
 					case('s'):
-						s = ((scaled_value * this.options.portion * 100) + (this.options.offset * 100)) % 100;
+						// s = ((scaled_value * this.options.portion * 100) + (this.options.offset * 100)) % 100;
+						s = scaled_value * 100;
 						break;
 					case('l'):
-						l = ((scaled_value * this.options.portion * 100) + (this.options.offset * 100)) % 100;
+						// l = ((scaled_value * this.options.portion * 100) + (this.options.offset * 100)) % 100;
+						l = scaled_value * 100;
 						break;
 					case('a'):
-						a = ((scaled_value * this.options.portion) + this.options.offset);
+						// a = ((scaled_value * this.options.portion) + this.options.offset);
+						a = scaled_value;
 						break;
 				}
 			}

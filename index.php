@@ -190,6 +190,13 @@ function make_table($id, $rows, $columns, $value_src = null){
       border-bottom: 1px solid #E3E3E3;
     }
 
+    #political_spending td {
+      width:20px;
+      height:20px;
+      text-indent: -10000px;
+      /*display:block;*/
+    }
+
     </style>
     
   </head>
@@ -224,10 +231,10 @@ function make_table($id, $rows, $columns, $value_src = null){
           <div class="container">
             <a class="brand colorful" href="#">Colorful.js</a>
             <ul class="nav">
-              <li><a href="#about-colorful">About</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#demos">Demos</a></li>
               <li><a href="#download">Download</a></li>
+              <li><a href="#demos">Demos</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#about-colorful">About</a></li>
               <li><a href="#supporters">Our Supporters</a></li>
             </ul>
           </div>
@@ -246,6 +253,14 @@ function make_table($id, $rows, $columns, $value_src = null){
         <div class="span12">
           <h2 title="Colorful.js Demos" class="colorful" name="demos" id="demos">Colorful.js Demos</h2>
           <div class="row">
+            <div class="span12">
+              <pre class="prettyprint">$('#political-spending').colorful({theta: 180, reverse: true});</pre>
+              <div class="well">
+                <h3>Political Donation Partisanship by State</h3>
+                <h4>Final AP Poll Rankings by Year</h4>
+              <?php echo $political_table; ?>
+              <hr/>
+            </div>
             <div class="span12">
               <pre class="prettyprint">$('#college-bball').colorful({theta: 180, reverse: true});</pre>
               <div class="well">
@@ -473,6 +488,7 @@ function make_table($id, $rows, $columns, $value_src = null){
     
 
     $('#bball').colorful({portion: 0.25, reverse: true, saturation: 85, lightness: 50, elementSelector: 'div.datum'});
+    $('#political_spending').colorful({portion: 0.4, reverse: true, offset: 0.6});
     $('#reversable').colorful({reverse: true});
     $('#grayscale').colorful({colorModel: 'grayscale'});
     $('#custom_hues').colorful({colors: [0,25,250]});
