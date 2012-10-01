@@ -6,3 +6,6 @@
 
 ## Documentation
 Demos and documentation are available on the [ColorfulJS website](http://lkurtz.com/colorful).
+
+## License
+Colorful.js is licensed under the MIT license [MIT license](http://www.opensource.org/licenses/mit-license.php).
